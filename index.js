@@ -16,8 +16,10 @@ app.set("view engines", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // ROUTES
-app.use(require("./routes/homepage.js"));
-
+//app.use(require("./routes/reviews.js"));
+app.get("/reviews", function(req,res){
+    res.render("reviews.ejs");
+});
 // SERVER LISTENING
 app.listen(3000, function() {
     console.log("Server is Running on Port 3000");
