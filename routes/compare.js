@@ -24,10 +24,10 @@ router.post('/compare', (function(req, res) {
                 res.render("comparisonfailed.ejs");
             }
             if (user) {
-                console.log(Gyms.name);
                 console.log(user);
                 res.render("comparisonpage.ejs")
             } else {
+                console.log("error");
                 res.render("comparisonfailed.ejs");
             }
         })

@@ -9,6 +9,7 @@ var app = express();
 app.set("view engine", "ejs");
 
 //REQUIRE MODELS
+var Gyms = require("./models/gymmodel");
 
 //APP CONFIG
 app.set("view engines", "ejs");
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // ROUTES
 app.use(require("./routes/homepage.js"));
 app.use(require("./routes/compare.js"));
+//app.use(require("./routes/comparisonpage.js"));
 
 
 // SERVER LISTENING
