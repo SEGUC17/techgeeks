@@ -11,16 +11,31 @@ var GymSchema = new Schema({
         unique: true
 
     },
-    username: {
+    Location: {
         type: String,
         unique: true
     },
-    password: {
+    Email: {
         type: String,
         unique: true
-    }
+    },
+    Telephone: {
+        type: Number,
+        unique: true
+
+    },
+    Openinghours: {
+        type: String,
+        unique: true
+    },
+    Reviews: {
+        type: String,
+    },
+    Ratings: {
+        type: Number,
+    },
 });
 
 var Gym = mongoose.model("Gym", GymSchema);
 
-module.exports = Student;
+module.exports = Gym;
