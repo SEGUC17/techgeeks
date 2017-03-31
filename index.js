@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // ROUTES
 app.use(require("./routes/homepage.js"));
 app.use(require("./routes/compare.js"));
-//app.use(require("./routes/comparisonpage.js"));
+app.use(require("./routes/addgyms.js"));
 
 
 // SERVER LISTENING

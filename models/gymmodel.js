@@ -1,11 +1,8 @@
 var express = require("express");
 var mongoose = require('mongoose');
-
 var Schema = mongoose.Schema;
 
-//var students = require("./model/studentmodel.js")
 var GymSchema = new Schema({
-    //de kanet name msh username
     Name: {
         type: String,
         unique: true
@@ -26,7 +23,6 @@ var GymSchema = new Schema({
     },
     Openinghours: {
         type: String,
-        unique: true
     },
     Reviews: {
         type: String,
