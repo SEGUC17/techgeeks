@@ -1,26 +1,37 @@
 var express = require("express");
 var mongoose = require('mongoose');
-
 var Schema = mongoose.Schema;
 
-//var students = require("./model/studentmodel.js")
 var GymSchema = new Schema({
-    //de kanet name msh username
     Name: {
         type: String,
         unique: true
 
     },
-    username: {
+    Location: {
         type: String,
         unique: true
     },
-    password: {
+    Email: {
         type: String,
         unique: true
-    }
+    },
+    Telephone: {
+        type: Number,
+        unique: true
+
+    },
+    Openinghours: {
+        type: String,
+    },
+    Reviews: {
+        type: String,
+    },
+    Ratings: {
+        type: Number,
+    },
 });
 
 var Gym = mongoose.model("Gym", GymSchema);
 
-module.exports = Student;
+module.exports = Gym;
