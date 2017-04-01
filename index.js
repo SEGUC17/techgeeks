@@ -5,6 +5,7 @@ var ejs = require('ejs');
 var router = express.Router();
 mongoose.connect("mongodb://localhost:27017/techgeeks");
 
+
 var app = express();
 
 
