@@ -1,7 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
-<<<<<<< HEAD
 var router = express.Router();
 mongoose.connect("mongodb://localhost:27017/techgeeks");
 
@@ -12,7 +11,8 @@ app.set("view engine", "ejs");
 //REQUIRE MODELS
 var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos")
-    //APP CONFIG
+
+//APP CONFIG
 app.set("view engines", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -22,30 +22,7 @@ app.use(require("./routes/compare.js"));
 app.use(require("./routes/addgyms.js"));
 app.use(require("./routes/uploadPhoto.js"));
 
-//app.use(require("./routes/comparisonpage.js"));
-=======
-var ejs = require('ejs');
-var router = express.Router();
-mongoose.connect("mongodb://localhost:27017/techgeeks");
-
-
-var app = express();
-
-
-//APP CONFIG
-app.set("view engines", "ejs");
-app.use(bodyParser.urlencoded({ extended: false }));
-
-
-// ROUTES
-app.use(require("./routes/homepage.js"));
->>>>>>> 9c13f836f81844e7ecbafc1d709edecac73a4f12
-
 // SERVER LISTENING
 app.listen(3000, function() {
     console.log("Server is Running on Port 3000");
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 9c13f836f81844e7ecbafc1d709edecac73a4f12
