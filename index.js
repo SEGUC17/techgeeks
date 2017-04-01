@@ -21,6 +21,8 @@ app.use(require("./routes/homepage.js"));
 app.use(require("./routes/compare.js"));
 app.use(require("./routes/addgyms.js"));
 app.use(require("./routes/uploadPhoto.js"));
+app.use(require("./routes/makereservation.js"));
+app.use(require("./routes/uploadPhoto.js"));
 
 // SERVER LISTENING
 app.listen(3000, function() {
