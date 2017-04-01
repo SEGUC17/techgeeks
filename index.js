@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
 var router = express.Router();
-mongoose.connect("mongodb://localhost:27017/miniproject");
+mongoose.connect("mongodb://localhost:27017/techgeeks");
 //mongoose.connect("mongodb://localhost:27017/portofolio");
 
 var app = express();
