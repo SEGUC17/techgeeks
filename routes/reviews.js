@@ -11,6 +11,7 @@ router.get('/reviews', function(req, res) {
 });
 router.post('/reviews', function(req, res) {
     res.render("reviews.ejs");
+    
 });
 router.post('/reviews', function(req, res) {
     reviews.create({
