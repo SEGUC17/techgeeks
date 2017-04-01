@@ -1,6 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var router = express.Router();
+mongoose.connect("mongodb://localhost:27017/techgeeks");
 
 
 mongoose.connect("mongodb://localhost:27017/techgeeks");
@@ -11,6 +13,7 @@ var app = express();
 var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos");
 var reviews = require("./models/rating");
+var uploadPhoto = require("./models/photos")
 
 //APP CONFIG
 app.set("view engines", "ejs");
@@ -22,6 +25,8 @@ app.use(require("./routes/compare.js"));
 app.use(require("./routes/addgyms.js"));
 app.use(require("./routes/uploadPhoto.js"));
 app.use(require("./routes/reviews.js"));
+app.use(require("./routes/makereservation.js"));
+app.use(require("./routes/uploadPhoto.js"));
 
 // SERVER LISTENING
 app.listen(3000, function() {

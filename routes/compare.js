@@ -34,5 +34,17 @@ router.post('/compare', (function(req, res) {
     }
 
 ));
+))
+router.get('/comparisonpage', function(req, res) {
+    console.log("getting comparison page");
+    Gyms.find({}, function(err, gyms) {
+        if (err) {
+            res.send(err.message);
+        } else {
+            console.log("rendering");
+            res.render('comparisonpage', { x: Gyms });
+        }
+    });
+});
 
 module.exports = router;
