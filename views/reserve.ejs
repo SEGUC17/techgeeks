@@ -11,10 +11,13 @@
             <label> Full name  </label>  &nbsp &nbsp <input type = "text" name = "name"> &nbsp &nbsp
             <br>
             <br>
-            <label> Mobile number </label> &nbsp &nbsp  <input type = "password" name = "mobilenumber">
+
+            <label> Mobile number </label> &nbsp &nbsp  <input type = "text" name = "mobilenumber">
             <br>
             <br>
-            <label> Payment method </label> &nbsp &nbsp Cash <input  id=opt1 type="checkbox" name="Cash"> &nbsp &nbsp  Credit Card <input  id=opt1 type="checkbox" name="Credit card">
+            
+            Payment method  <input type="checkbox" name="cash" value="cash" onclick= "document.qdbform.creditcard.checked=false;" /> Cash <input type="checkbox" name="creditcard" value="creditcard" onclick="document.qdbform.cash.checked=false;" />  Credit card
+          
             <br>
             <br>
             <input type = "submit" value = "Reserve"> 
