@@ -35,6 +35,6 @@ router.post('/compare', (function(req, res) {
     }
 
 ));
-))
+
 
 module.exports = router;
