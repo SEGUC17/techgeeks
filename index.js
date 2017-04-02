@@ -8,7 +8,6 @@ var app = express();
 //REQUIRE MODELS
 var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos");
-
 //APP CONFIG
 app.set("view engines", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,8 +24,6 @@ app.use(require("./routes/uploadPhoto.js"));
 app.use(require("./routes/client.js"));
 app.use(require("./routes/gyminfo.js"));
 
-
-// SERVER LISTENING
-app.listen(3000, function() {
-    console.log("Server is Running on Port 3000");
+app.listen('3000', function() {
+    console.log(" local host 3000");
 });

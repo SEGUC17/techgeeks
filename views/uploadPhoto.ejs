@@ -1,3 +1,4 @@
+
 <html lang="en">
 
 <head>
@@ -136,6 +137,11 @@
                         <br>
                          <img id="blah" src="#" alt="your image" />
                          <br>
+                <form class="form" method="POST" action="/photos">
+                    <div class="form-group">
+                        <label for="InputTitle">Choose a photo</label>
+                        <input name = "Screenshots" type="file" accept="image/*" class="form-control" id="InputTitle"onchange="preview_image(event)" placeholder="Screenshots" required>
+                        <br>
                         <button class="btn btn-primary" ng-disabled="uploading" > Upload</button>
 
                 </form>

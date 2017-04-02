@@ -18,25 +18,22 @@ router.get("/comparisonfailed", function(req, res) {
 });
 
 router.post('/compare', (function(req, res) {
-    Gyms.findOne({ Name: req.body.name1, Name: req.body.name2 }, function(err, gyms) {
-        if (err) {
-            res.send(err.message);
-            res.render("comparisonfailed.ejs");
-        }
+        Gyms.findOne({ Name: req.body.name1, Name: req.body.name2 }, function(err, gyms) {
+            if (err) {
+                res.send(err.message);
+                res.render("comparisonfailed.ejs");
+            }
 
-        if (gyms) {
-            console.log(gyms);
-            res.render("comparisonpage.ejs", { x: gyms });
-            if (user) {
-                console.log(user);
-                res.render("comparisonpage.ejs")
+            if (gyms) {
+                console.log(gyms);
+                res.render("comparisonpage.ejs", { x: gyms });
             } else {
                 console.log("error");
                 res.render("comparisonfailed.ejs");
             }
-        }
-    });
-}));
+        })
+    }
 
+));
 
 module.exports = router;

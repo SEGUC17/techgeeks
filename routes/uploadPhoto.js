@@ -9,7 +9,9 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.get('/uploadPhoto', function(req, res) {
     res.render("uploadPhoto.ejs");
 });
-
+router.post('/uploadPhoto', function(req, res) {
+    res.render("uploadPhoto.ejs");
+});
 router.post('/uploadPhoto', function(req, res) {
     uploadPhoto.create({
 
