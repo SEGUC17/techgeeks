@@ -35,6 +35,8 @@ router.post('/compare', (function(req, res) {
                 res.render("comparisonfailed.ejs");
             }
         }
-    })
+    });
 }));
+
+
 module.exports = router;

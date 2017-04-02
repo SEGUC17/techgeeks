@@ -8,8 +8,6 @@ var app = express();
 //REQUIRE MODELS
 var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos");
-var reserve = require("./models/reservemodel");
-
 
 //APP CONFIG
 app.set("view engines", "ejs");
@@ -24,6 +22,7 @@ app.use(require("./routes/comparisonpage.js"));
 app.use(require("./routes/reviews.js"));
 app.use(require("./routes/makereservation.js"));
 app.use(require("./routes/uploadPhoto.js"));
+app.use(require("./routes/client.js"));
 app.use(require("./routes/gyminfo.js"));
 
 
