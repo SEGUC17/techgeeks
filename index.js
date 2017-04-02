@@ -1,7 +1,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
+var mysql = require('mysql');
 var router = express.Router();
+
 mongoose.connect("mongodb://localhost:27017/techgeeks");
 
 var app = express();
@@ -27,3 +29,10 @@ app.use(require("./routes/gyminfo.js"));
 app.listen(3000, function() {
     console.log("Server is Running on Port 3000");
 });
+
+console.log(Gyms);
+   for (var i in Gyms) {
+      console.log(i);
+   }
+
+   
