@@ -9,6 +9,10 @@ router.get("/compare", function(req, res) {
     res.render("compare.ejs");
 });
 
+router.get("/comparisonpage", function(req, res) {
+    res.render("comparisonpage.ejs");
+});
+
 router.get("/comparisonfailed", function(req, res) {
     res.render("comparisonfailed.ejs");
 });
@@ -30,6 +34,7 @@ router.post('/compare', (function(req, res) {
         })
     }
 
+));
 ))
 
 module.exports = router;
