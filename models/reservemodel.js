@@ -16,10 +16,7 @@ var reserveSchema = new Schema({
         type: Number,
         unique: true
     },
-    paymentmethod: {
-        type: String,
-        unique: true
-    }
+    
 });
 
 var reservation = mongoose.model("Reservation", reserveSchema);
