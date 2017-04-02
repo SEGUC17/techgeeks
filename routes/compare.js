@@ -35,6 +35,10 @@ router.post('/compare', (function(req, res) {
     }
 
 ));
+<<<<<<< HEAD
 
+=======
+))
+>>>>>>> c645d7c03bc7ddc1bb959ed3284f4f65633d1298
 
 module.exports = router;
