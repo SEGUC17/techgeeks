@@ -17,15 +17,17 @@ router.get("/comparisonfailed", function(req, res) {
     res.render("comparisonfailed.ejs");
 });
 
+
 router.post('/compare', (function(req, res) {
         Gyms.findOne({ Name: req.body.name1, Name: req.body.name2 }, function(err, user) {
             if (err) {
                 res.send(err.message);
                 res.render("comparisonfailed.ejs");
             }
+
             if (user) {
                 console.log(user);
-                res.render("comparisonpage.ejs")
+                res.redirrenderect("comparisonpage.ejs")
             } else {
                 console.log("error");
                 res.render("comparisonfailed.ejs");
@@ -35,16 +37,5 @@ router.post('/compare', (function(req, res) {
 
 ));
 ))
-router.get('/comparisonpage', function(req, res) {
-    console.log("getting comparison page");
-    Gyms.find({}, function(err, gyms) {
-        if (err) {
-            res.send(err.message);
-        } else {
-            console.log("rendering");
-            res.render('comparisonpage', { x: Gyms });
-        }
-    });
-});
 
 module.exports = router;

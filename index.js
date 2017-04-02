@@ -13,7 +13,6 @@ var app = express();
 var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos");
 var reviews = require("./models/rating");
-var uploadPhoto = require("./models/photos")
 
 //APP CONFIG
 app.set("view engines", "ejs");
@@ -23,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(require("./routes/homepage.js"));
 app.use(require("./routes/compare.js"));
 app.use(require("./routes/addgyms.js"));
-app.use(require("./routes/uploadPhoto.js"));
+app.use(require("./routes/comparisonpage.js"));
 app.use(require("./routes/reviews.js"));
 app.use(require("./routes/makereservation.js"));
 app.use(require("./routes/uploadPhoto.js"));
