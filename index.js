@@ -24,6 +24,7 @@ app.use(require("./routes/uploadPhoto.js"));
 app.use(require("./routes/client.js"));
 app.use(require("./routes/gyminfo.js"));
 
-app.listen('3000', function() {
-    console.log(" local host 3000");
+// SERVER LISTENING
+app.listen(3000, function() {
+    console.log("Server is Running on Port 3000");
 });
