@@ -27,9 +27,6 @@ router.post('/compare', (function(req, res) {
             if (gyms) {
                 console.log(gyms);
                 res.render("comparisonpage.ejs", { x: gyms });
-            if (user) {
-                console.log(user);
-                res.render("comparisonpage.ejs")
             } else {
                 console.log("error");
                 res.render("comparisonfailed.ejs");
@@ -38,7 +35,5 @@ router.post('/compare', (function(req, res) {
     }
 
 ));
-))
-
 
 module.exports = router;
