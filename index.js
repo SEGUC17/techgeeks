@@ -12,11 +12,6 @@ app.set("view engine", "ejs");
 var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos")
 
-var uploadPhoto = require("./models/photos")
-
-var uploadPhoto = require("./models/photos")
-
-
 //APP CONFIG
 app.set("view engines", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
