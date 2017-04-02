@@ -1,3 +1,4 @@
+var express = require("express");
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -9,4 +10,6 @@ var photoSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model("photos", photoSchema);
+var Photos = mongoose.model("Photos", photoSchema);
+
+module.exports = Photos;
