@@ -17,11 +17,20 @@ var reserveSchema = new Schema({
         unique: true
     },
     paymentmethod: {
-        type: Number,
+        type: String,
         unique: true
     }
 });
 
-var Reservation = mongoose.model("Reservation", reserveSchema);
+var reservation = mongoose.model("Reservation", reserveSchema);
 
-module.exports = Reservation;
+// module.exports.createReservation = function (gname, name, mobilenumber, paymentmethod) {
+//     var newReservation = new this();
+//     newReservation.gname = gname;
+//     newReservation.name = name;
+//     newReservation.mobilenumber = mobilenumber;
+//     newReservation.paymentmethod = paymentmethod;
+//     newReservation.save();
+//     return newReservation;
+// }
+module.exports = reservation;
