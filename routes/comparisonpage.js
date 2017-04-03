@@ -5,7 +5,6 @@ var bodyParser = require("body-parser");
 var Gyms = require("../models/gymmodel")
 router.use(bodyParser.urlencoded({ extended: false }));
 router.get('/comparisonpage', function(req, res) {
-    console.log("getting comparison page");
     Gyms.find({}, function(err, gyms) {
         if (err) {
             res.send(err.message);
