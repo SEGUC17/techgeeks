@@ -5,7 +5,7 @@
     <body>
 
     <form method = "POST" action = "/reserve">
-         <label> Gym name </label> &nbsp &nbsp  <input type = "text" name = "gname">
+         <label> Gym name </label> &nbsp &nbsp  <input type = "text" name = "name">
             <br>
             <br>
             <label> Full name  </label>  &nbsp &nbsp <input type = "text" name = "name"> &nbsp &nbsp
@@ -16,15 +16,11 @@
             <br>
             <br>
             
-            <label> Payment method </label> <select name="payment" id="payment">
-                <option value="cash">Cash</option>
-                <option value="creditcard">Credit card</option>
-           </select><script> 
-           ('#drpdwn').ejDropDownList(); 
-        </script>
+            Payment method  <input type="checkbox" name="cash" value="cash" onclick= "document.qdbform.creditcard.checked=false;" /> Cash <input type="checkbox" name="creditcard" value="creditcard" onclick="document.qdbform.cash.checked=false;" />  Credit card
+          
             <br>
             <br>
-            <input type = "submit" value = "Reserve" <a href="/reservesuccess"> 
+            <input type = "submit" value = "Reserve"> 
      
         </form>
 
