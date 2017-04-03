@@ -30,7 +30,6 @@ router.post('/reviews', function(req, res) {
 
 });
 
-
 router.get("/client/:id")
 
 module.exports = router;
