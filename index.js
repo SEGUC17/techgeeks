@@ -1,16 +1,17 @@
-var express = require('express');
+var express = require("express");
+var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
-var mysql = require('mysql');
-var bodyParser = require('body-parser');
 var router = express.Router();
-
 mongoose.connect("mongodb://localhost:27017/techgeeks");
+
 var app = express();
+
+app.set("view engine", "ejs");
 
 //REQUIRE MODELS
 var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos");
-var reserve = require("./models/reservemodel");
+var client = require("./models/clientmodel");
 
 //APP CONFIG
 app.set("view engines", "ejs");
@@ -20,20 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(require("./routes/homepage.js"));
 app.use(require("./routes/compare.js"));
 app.use(require("./routes/addgyms.js"));
-app.use(require("./routes/search.js"));
-app.use(require("./routes/comparisonpage.js"));
-app.use(require("./routes/reviews.js"));
-app.use(require("./routes/makereservation.js"));
 app.use(require("./routes/uploadPhoto.js"));
-app.use(require("./routes/client.js"));
-app.use(require("./routes/gyminfo.js"));
+app.use(require("./routes/register.js"));
+
 
 // SERVER LISTENING
 app.listen(3000, function() {
     console.log("Server is Running on Port 3000");
 });
-
-console.log(Gyms);
-   for (var i in Gyms) {
-      console.log(i);
-   }
