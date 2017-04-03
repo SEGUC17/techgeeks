@@ -23,7 +23,7 @@ Writes:function(req,res){
       }
       if(c){
           let check = new ClientReview (req.body);
-          ClientReview.save({ Reviews: req.body.writereview},
+          ClientReview.create({ Reviews: req.body.writereview},
            function(err,check){
                if(err){
                    console.log(err)
