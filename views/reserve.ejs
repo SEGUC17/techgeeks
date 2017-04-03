@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title> Home page</title>
+    </head>
+    <body>
+
+    <form method = "POST" action = "/reserve">
+         <label> Gym name </label> &nbsp &nbsp  <input type = "text" name = "gname">
+            <br>
+            <br>
+            <label> Full name  </label>  &nbsp &nbsp <input type = "text" name = "name"> &nbsp &nbsp
+            <br>
+            <br>
+
+            <label> Mobile number </label> &nbsp &nbsp  <input type = "text" name = "mobilenumber">
+            <br>
+            <br>
+            
+            <label> Payment method </label> <select name="payment" id="payment">
+                <option value="cash">Cash</option>
+                <option value="creditcard">Credit card</option>
+           </select><script> 
+           ('#drpdwn').ejDropDownList(); 
+        </script>
+            <br>
+            <br>
+            <input type = "submit" value = "Reserve" <a href="/reservesuccess"> 
+     
+        </form>
+
+
+        </body>
+</html>
