@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+//var reviews = require("../models/rating");
+
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get('/reviews', function(req, res) {
@@ -9,7 +11,7 @@ router.get('/reviews', function(req, res) {
 });
 router.post('/reviews', function(req, res) {
     res.render("reviews.ejs");
-
+    
 });
 router.post('/reviews', function(req, res) {
     reviews.create({
@@ -28,5 +30,7 @@ router.post('/reviews', function(req, res) {
 
 });
 
+
 router.get("/client/:id")
+
 module.exports = router;
