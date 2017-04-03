@@ -16,6 +16,11 @@ var reserveSchema = new Schema({
         type: Number,
         unique: true
     },
+});
+
+var Reservation = mongoose.model("Reservation", reserveSchema);
+
+module.exports = Reservation;
     
 });
 

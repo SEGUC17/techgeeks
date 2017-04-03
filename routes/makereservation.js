@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var bodyParser = require("body-parser");
+
 var mongoose = require('mongoose');
 var reservation = require('../models/reservemodel.js');
 var expressValidator = require('express-validator');
@@ -9,6 +10,14 @@ router.get("/reserve", function(req, res) {
     res.render("reserve.ejs");
 });
 
+router.use(bodyParser.urlencoded({ extended: false }));
+
+router.post('/reserve', (function(req, res) {
+   
+}
+
+));
+module.exports = router; 
 router.get("/reservesuccess", function(req, res){
     res.render("reservationsuccess.ejs");
 });
