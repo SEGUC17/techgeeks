@@ -17,8 +17,9 @@ router.post('/register', function(req, res) {
         client.create({
             username: req.body.username,
             Email: req.body.Email,
-            password: req.body.password,
+            password: req.body.psw,
             gender: req.body.gender,
+            age: req.body.age
         }, function(err, client) {
             if (err) {
                 console.log(err);
@@ -30,6 +31,6 @@ router.post('/register', function(req, res) {
                 res.redirect("/login");
             }
         });
-}),
+    }),
 
-module.exports = router;
+    module.exports = router;
