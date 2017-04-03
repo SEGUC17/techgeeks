@@ -19,10 +19,4 @@ router.get("/viewactivities", function(req, res) {
 
 });
 
-router.get("/viewreviews", function(req, res) {
-    res.render("myreviews.ejs");
-
-});
-
-
 module.exports = router; 

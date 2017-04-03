@@ -6,3 +6,4 @@ var mongoose = require('mongoose');
 router.get('/reviewdone', function(req, res) {
     res.render("reviewdone.ejs");
 });
+module.exports = router;
