@@ -8,6 +8,8 @@ var app = express();
 //REQUIRE MODELS
 var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos");
+var reserve = require("./models/reservemodel");
+
 //APP CONFIG
 app.set("view engines", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
