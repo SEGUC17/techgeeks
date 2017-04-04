@@ -27,13 +27,11 @@ app.use(require("./routes/makereservation.js"));
 app.use(require("./routes/uploadPhoto.js"));
 app.use(require("./routes/client.js"));
 app.use(require("./routes/gyminfo.js"));
+app.use(require("./routes/writereview.js"));
 
 // SERVER LISTENING
 app.listen(3000, function() {
     console.log("Server is Running on Port 3000");
 });
 
-console.log(Gyms);
-   for (var i in Gyms) {
-      console.log(i);
-   }
+

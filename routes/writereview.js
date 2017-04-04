@@ -6,15 +6,9 @@ var mongoose = require('mongoose');
 router.get('/writereview', function(req, res) {
     res.render("writereviews.ejs");
 });
-
-router.post ('/reviewdone',writereview.Writes);
-
 var ClientReview =require('../models/gymmodel')
 
-var Review = {
-
-Writes:function(req,res){
-    let c = new ClientReview (req.body);
+router.post ('/reviewdone',function(req, res){
     ClientReview.findOne ({Name:req.body.writegym},
     function(err, c){
       if(err){
