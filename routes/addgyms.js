@@ -15,7 +15,7 @@ router.post('/addgyms', function(req, res) {
             Location: req.body.location,
             Email: req.body.email,
             Telephone: req.body.telephone,
-            openinghours: req.body.hours,
+            Openinghours: req.body.hours,
 
         }, function(err, gyms) {
             if (err) {
