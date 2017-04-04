@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var photoSchema = mongoose.Schema({
     photo:{
         type:String,
-        required:true,
+        //required:true,
 
     }
 })
