@@ -16,6 +16,7 @@ router.post('/addgyms', function(req, res) {
             Email: req.body.email,
             Telephone: req.body.telephone,
             openinghours: req.body.hours,
+
         }, function(err, gyms) {
             if (err) {
                 console.log(err);
