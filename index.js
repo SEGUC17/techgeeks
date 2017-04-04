@@ -29,7 +29,7 @@ app.use(require("./routes/client.js"));
 app.use(require("./routes/register.js"));
 app.use(require("./routes/comparisonpage.js"));
 app.use(require("./routes/gyminfo.js"));
-app.use(require("./routes/writereview.js"));
+//app.use(require("./routes/writereview.js"));
 app.use(require("./routes/reviewdone.js"));
 app.use(require("./routes/reviews.js"));
 app.use(require("./routes/search.js"));
@@ -40,4 +40,3 @@ app.use(require("./routes/makereservation.js"));
 app.listen(3000, function() {
     console.log("Server is Running on Port 3000");
 });
-
