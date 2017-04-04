@@ -16,13 +16,14 @@ router.get("/comparisonfailed", function(req, res) {
 });
 
 router.post('/compare', (function(req, res) {
-    
- var Name = req.body.name1
- var Name2 = req.body.Name2
-    Gyms.find({ Name: Name }, function(err, gyms) {
+
+    var Name = req.body.name1
+    var Name2 = req.body.name2
+    Gyms.find({ $and: [{ $or: [{ Name: Name }, { Name: Name2 }] }] }, function(err, gyms) {
         if (err) {
             res.send(err.message);
-        } else {
+            res.render("comparisonfailed.ejs");
+        } else if (gyms) {
             console.log(Name);
             console.log("rendering");
             res.render('comparisonpage.ejs', { x: gyms });
@@ -35,17 +36,3 @@ router.post('/compare', (function(req, res) {
 
 
 module.exports = router;
-
-// Gyms.findOne({ Name: req.body.name1, Name: req.body.name2 }, function(err, gyms) {
-//         if (err) {
-//             res.send(err.message);
-//             res.render("comparisonfailed.ejs");
-//         }
-//         if (gyms) {
-//             res.redirect("/comparisonpage");
-//         } else {
-             
-//             console.log("error");
-//             res.render("comparisonfailed.ejs");
-//         }
-//     });
