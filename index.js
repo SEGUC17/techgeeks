@@ -32,7 +32,6 @@ app.use(require("./routes/comparisonpage.js"));
 app.use(require("./routes/gyminfo.js"));
 app.use(require("./routes/writereview.js"));
 app.use(require("./routes/reviewdone.js"));
-app.use(require("./routes/reviews.js"));
 app.use(require("./routes/search.js"));
 app.use(require("./routes/viewaccount.js"));
 app.use(require("./routes/makereservation.js"));
@@ -43,4 +42,3 @@ app.use(require("./routes/reviewsofagym.js"));
 app.listen(3000, function() {
     console.log("Server is Running on Port 3000");
 });
-
