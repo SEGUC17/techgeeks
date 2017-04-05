@@ -1,34 +1,6 @@
-
 <form action="/search" method="POST">
-
 <h1>Search for gyms</h1>
- <div class="row">
-   Name <br> <input type="text" name="searchname" placeholder="Name" required/>
-    <% if(x) { %>
-        <% for(var i=0; i<x.length; i++){ %>
-            <div class="card col-xs-4">
-                <h4 class="card-title"> Name: <%= x[i].Name %></h4>
-                <br>
-                <br>
-
-            </div>
-
-
-
-        <% } %>
-    <% } else { %>
-        <p>something wrong</p>
-    <% } %>
-            </div>
-            </form>
-
-
-            <html>
-             <head>
-
-             </head>
-             <body>
-                  <a href="/gyminfo"> <button type="button"> Search </button></a>
-
-                </body>
-               </html>
+    Name: <input type="text" name="searchname" placeholder="Name" required/> <br> 
+    Address: <input type="text" name="searchaddress" placeholder="Address" required/> <br>
+     <input type = "submit" value="Search">
+</form>
