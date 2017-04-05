@@ -1,0 +1,21 @@
+ <html>
+
+ 
+    <body> 
+
+ <h1>Gym Review </h1>
+ <div class="row">
+    <% if(x) { %>
+        <% for(var i=0; i<x.length; i++){ %>
+            <div class="card col-xs-4">
+                <h4 class="card-title"> Reviews: <%= x[i].Reviews %></h4>
+                <h4 class="card-title"> Ratings: <%= x[i].Ratings %></h4>
+            </div>
+        <% } %>
+    <% } else { %>
+        <p>something wrong</p>
+    <% } %>
+            </div>   
+<a href="/writethenametoshowreviews">Return<a> <br>
+</body>
+ </html>
