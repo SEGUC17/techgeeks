@@ -13,6 +13,7 @@ var Gyms = require("./models/gymmodel");
 var uploadPhoto = require("./models/photos");
 var client = require("./models/clientmodel");
 var reserve = require("./models/reservemodel");
+var reviews = require("./models/reviewmodel");
 
 
 //APP CONFIG
