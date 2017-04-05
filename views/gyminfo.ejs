@@ -1,31 +1,21 @@
-<html>
-<head> Gym's Information <head/>
-	<br/>
-	<br/>
-   <body>
-      <form action="" method="post" enctype="multipart/form-data">
+<h1>Gyms information</h1>
+ <div class="row">
+    <% if(x) { %>
+        <% for(var i=0; i<x.length; i++){ %>
          
-            <label for="name">Name:</label>
-            <br/>
-            <br />
-            <label for="email">Email:</label>
-            <br/>
-            <br />
-            <label for="Location">Location:</label>
-           <br/>
-            <br />
-           <label for="Telephone">Telephone:</label>
-        <br/>
-        <br/>
-         <label for="Openeing from ">Opening from:</label>    <br/><br/>                      <label for="to">to:</label>
-         <br/>
-         <br/>
-<label for="Reviews">Reviews:</label>
-<br/>
-<br/>
-<label for="Ratings">Ratings:</label>
-
-
-      </form>
-   </body>
-</html>
+            <div class="card col-xs-4">
+           
+                <h4 class="card-title"> Name: <%= x[i].Name %></h4>
+                <h4 class="card-title"> Location: <%= x[i].Location %></h4>
+                <h4 class="card-title"> Email: <%= x[i].Email %></h4>
+                <h4 class="card-title"> Telephone: <%= x[i].Telephone %></h4>
+                <h4 class="card-title"> Opening Hours: <%= x[i].Openinghours %></h4>
+                <h4 class="card-title"> Reviews: <%= x[i].Reviews %></h4>
+                <h4 class="card-title"> Ratings: <%= x[i].Ratings %></h4>
+            </div>
+       
+        <% } %>
+    <% } else { %>
+        <p>something wrong</p>
+    <% } %>
+            </div>   

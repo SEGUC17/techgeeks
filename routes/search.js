@@ -1,19 +1,22 @@
 var express = require("express");
 var router = express.Router();
 var bodyParser = require("body-parser");
-
 var Gyms = require("../models/gymmodel")
-router.use(bodyParser.urlencoded({ extended: false }));
+errouter.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/search", function(req, res) {
-    Gyms.find({ Name: req.body.name }, function(err, gyms) {
+    res.render("search.ejs");
+});
+router.post('/search',function(req,res){
+Gyms.find({ $and: [{ $or: [{ Name: req.body.searchname }, { Location: req.body.searchaddress }] }] }, function(err, gyms) {
         if (err) {
             res.send(err.message);
-        } else {
+        } else if (gyms) {
             console.log("rendering");
-            res.render('search', { x: gyms });
+            res.redirect('/gyminfo');
         }
     });
+
 });
 
 module.exports = router;
