@@ -24,8 +24,6 @@ router.post('/compare', (function(req, res) {
             res.send(err.message);
             res.render("comparisonfailed.ejs");
         } else if (gyms) {
-            console.log(Name);
-            console.log("rendering");
             res.render('comparisonpage.ejs', { x: gyms });
         }
     });

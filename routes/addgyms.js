@@ -19,13 +19,8 @@ router.post('/addgyms', function(req, res) {
 
         }, function(err, gyms) {
             if (err) {
-                console.log(err);
-                console.log("can't be added");
                 res.redirect("/addgyms")
             } else {
-                console.log(gyms.Name);
-                console.log("==========");
-                console.log(gyms.Email);
                 res.redirect("/addgyms");
             }
         });

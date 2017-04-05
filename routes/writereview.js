@@ -29,7 +29,6 @@ router.post('/writereview', (function(req, res) {
                             res.send("failed");
                         } else {
                             console.log(Review);
-                            console.log("yes");
                             res.redirect('/reviewdone');
 
                         }

@@ -15,7 +15,6 @@ router.get('/reviewsofagym', (function(req, res) {
             res.redirect("reviewfailed.ejs");
         }
         if (reviews) {
-            console.log(reviews);
             res.render('reviewsofagym', { x: reviews });
         } else {
             res.render("reviewfailed.ejs");
