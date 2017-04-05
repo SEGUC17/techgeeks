@@ -12,10 +12,6 @@ router.get("/login", function(req, res) {
     res.render("login.ejs");
 });
 
-router.get("/loginsuccess", function(req, res) {
-    res.render("loginsuccess.ejs");
-});
-
 router.get("/loginfail", function(req, res) {
     res.render("loginfail.ejs");
 });
@@ -28,8 +24,9 @@ router.post('/login', (function(req, res) {
         }
         if (user) {
             console.log(user);
-            res.render("loginsuccess.ejs");
-        } else {
+            console.log("rendering");
+            res.render('homepageclient.ejs', { x : user });
+        } else { 
             res.render("loginfail.ejs");
         }
     })
