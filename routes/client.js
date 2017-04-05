@@ -17,7 +17,7 @@ router.get("/loginfail", function(req, res) {
 });
 
 router.post('/login', (function(req, res) {
-    User.findOne({ Email: req.body.uemail, password: req.body.psw }, function(err, user) {
+    User.find({ Email: req.body.uemail, password: req.body.psw }, function(err, user) {
         if (err) {
             res.send(err.message);
             res.redirect("loginfail.ejs");
