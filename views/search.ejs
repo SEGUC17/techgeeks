@@ -1,110 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-//CSS
-* {
-  box-sizing: border-box;
-}
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+<form action="/search" method="POST">
 
-#myTable {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  font-size: 18px;
-}
+<h1>Search for gyms</h1>
+ <div class="row">
+   Name <br> <input type="text" name="searchname" placeholder="Name" required/>
+    <% if(x) { %>
+        <% for(var i=0; i<x.length; i++){ %>
+            <div class="card col-xs-4">
+                <h4 class="card-title"> Name: <%= x[i].Name %></h4>
+                <br>
+                <br>
 
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
+            </div>
 
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
 
-#myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
 
-// HTML
-</style>
-</head>
-<body>
+        <% } %>
+    <% } else { %>
+        <p>something wrong</p>
+    <% } %>
+            </div>
+            </form>
 
-<h2>Gyms</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for gyms ..." title="Type in a name">
+            <html>
+             <head>
 
-<table id="myTable">
-  <tr class="header">
-    <th style="width:60%;">Gym</th>
-    <th style="width:40%;">Address</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Berglunds snabbkop</td>
-    <td>Sweden</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Koniglich Essen</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Italy</td>
-  </tr>
-  <tr>
-    <td>North/South</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Paris specialites</td>
-    <td>France</td>
-  </tr>
-</table>
+             </head>
+             <body>
+                  <a href="/gyminfo"> <button type="button"> Search </button></a>
 
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-</script>
-
-</body>
-</html>
+                </body>
+               </html>
