@@ -23,10 +23,8 @@ router.post('/login', (function(req, res) {
             res.redirect("loginfail.ejs");
         }
         if (user) {
-            console.log(user);
-            console.log("rendering");
-            res.render('homepageclient.ejs', { x : user });
-        } else { 
+            res.render('homepageclient.ejs', { x: user });
+        } else {
             res.render("loginfail.ejs");
         }
     })

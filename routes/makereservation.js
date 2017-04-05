@@ -12,65 +12,50 @@ router.get("/reserve", function(req, res) {
     res.render("reserve.ejs");
 });
 
-
-
 router.get("/reservesuccess", function(req, res) {
     res.render("reservationsuccess.ejs");
 });
 
-
-
 router.use(bodyParser.urlencoded({ extended: false }));
 
-
-
 router.post('/reserve', (function(req, res) {
-gym.findOne({Name : req.body.gname}, function(err, gym){
-       if(err){
-           console.log(err);
-           res.send(failed);
-           console.log("Cannot be added");
-        } else if (gym){
-                client.findOne({username : req.body.username}, function(err, client){
-                    if(err){
-                        console.log(err);
-                        res.send(failed);
-                        console.log("Cannot be added");
-                    } else if (client){
-
-                     var reservation = require('../models/reservemodel');
-
-                    reservation.create({gname: req.body.gname,
-                    username: req.body.username,
-                    mobilenumber: req.body.mobilenumber,}
-                    , function(err, reservation){
-                    if(err){
+    gym.findOne({ Name: req.body.gname }, function(err, gym) {
+        if (err) {
+            res.send(failed);
+        } else if (gym) {
+            client.findOne({ username: req.body.username }, function(err, client) {
+                if (err) {
                     console.log(err);
-                    res.send("Failed");
-                    console.log("can't be added");
-                    //res.redirect("/reserve");
-                     } else{
-                    console.log(reservation.gname);
-                    console.log("==========");
-                    console.log(reservation.username);
-                    console.log(reservation.mobilenumber);
-                    res.redirect("/reservesuccess");
-            } 
+                    res.send(failed);
+                } else if (client) {
+
+                    var reservation = require('../models/reservemodel');
+
+                    reservation.create({
+                        gname: req.body.gname,
+                        username: req.body.username,
+                        mobilenumber: req.body.mobilenumber,
+                    }, function(err, reservation) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            res.redirect("/reservesuccess");
+                        }
+                    })
+
+                } else {
+                    res.send("Please enter your correct username");
+                }
             })
-            
-                    } else {
-                        res.send("Please enter your correct username");
-                    }
-                })
 
-        }else {
-                    res.send("We don't offer that gym to reserve in");
-                  }
-                    });
+        } else {
+            res.send("We don't offer that gym to reserve in");
+        }
+    });
 
 
-                       
-  
+
+
 }));
 
 

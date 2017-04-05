@@ -24,9 +24,6 @@ router.post('/register', function(req, res) {
                 console.log(err);
                 res.render("registerfailed")
             } else {
-                console.log(client.Email);
-                console.log("==========");
-                console.log(client.password);
                 res.redirect("/login");
             }
         });

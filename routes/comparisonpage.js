@@ -11,17 +11,5 @@ router.get("/comparisonpage", function(req, res) {
     res.render("comparisonpage.ejs");
 });
 
-// router.get('/compare', function(req, res) {
-//     var Name = req.body.name1
-//     Gyms.find({ Name: Name }, function(err, gyms) {
-//         if (err) {
-//             res.send(err.message);
-//         } else {
-//             console.log(Name);
-//             console.log("rendering");
-//             res.render('comparisonpage', { x: gyms });
-//         }
-//     });
-// });
 
 module.exports = router;

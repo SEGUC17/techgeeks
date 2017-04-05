@@ -19,8 +19,6 @@ router.post('/uploadPhoto', function(req, res) {
             console.log(err);
             res.redirect("/uploadPhoto")
         } else {
-            console.log(uploadPhoto.photo);
-            console.log("Photo is Uploaded");
             res.redirect("/uploadPhoto")
         }
     });

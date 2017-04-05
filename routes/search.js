@@ -12,7 +12,6 @@ router.post('/search', function(req, res) {
         if (err) {
             res.send(err.message);
         } else if (gyms) {
-            console.log("rendering");
             res.render('gyminfo', { x: gyms });
         }
     });
