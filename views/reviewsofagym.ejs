@@ -1,6 +1,4 @@
  <html>
-
- 
     <body> 
 
  <h1>Gym Review </h1>
@@ -8,6 +6,7 @@
     <% if(x) { %>
         <% for(var i=0; i<x.length; i++){ %>
             <div class="card col-xs-4">
+                <h4 class="card-title"> Name: <%= x[i].Name %></h4>
                 <h4 class="card-title"> Reviews: <%= x[i].Reviews %></h4>
                 <h4 class="card-title"> Ratings: <%= x[i].Ratings %></h4>
             </div>

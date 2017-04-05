@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 //var myclient = router.get("/client/:id");
 
 
-var ReviewSchema = new Schema ({
+var ReviewSchema = new Schema({
     Name: {
         type: String,
         unique: true
@@ -13,7 +13,10 @@ var ReviewSchema = new Schema ({
     Reviews: {
         type: String
     },
+    Ratings: {
+        type: Number
+    },
 });
-    var Review = mongoose.model ("Review",ReviewSchema);
+var Review = mongoose.model("Review", ReviewSchema);
 
-    module.exports = Review;
+module.exports = Review;

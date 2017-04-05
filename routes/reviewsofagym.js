@@ -2,29 +2,21 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var router = express.Router();
-var Gyms = require("../models/gymmodel")
+var Reviews = require("../models/reviewmodel")
 
 //REQUIRE MODELS
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
-router.get("/reviewsofagym", function(req, res) {
-    res.render("reviewsofagym.ejs");
-});
-
-// router.get("/writethenametoshowreviews", function(req, res) {
-//     res.render("writethenametoshowreviews.ejs");
-// });
-
-router.post('/reviewsofagym', (function(req, res) {
-    Gyms.findOne({ Name: req.body.GymName}, function(err, gyms) {
+router.get('/reviewsofagym', (function(req, res) {
+    Reviews.find({}, function(err, reviews) {
         if (err) {
             res.send(err.message);
             res.redirect("reviewfailed.ejs");
         }
-        if (gyms) {
-            console.log(gyms);
-             res.render('reviewsofagym', { x: gyms });
+        if (reviews) {
+            console.log(reviews);
+            res.render('reviewsofagym', { x: reviews });
         } else {
             res.render("reviewfailed.ejs");
 
