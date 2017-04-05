@@ -23,11 +23,9 @@ var clientSchema = new Schema ({
     },
      reviews: {
         type: String,
-        unique: true
     },
     rating: {
         type: String,
-        unique: false
     },
       activities: {
         type: String,

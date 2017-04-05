@@ -33,5 +33,4 @@ var GymSchema = new Schema({
 });
 
 var Gym = mongoose.model("Gym", GymSchema);
-
 module.exports = Gym;
