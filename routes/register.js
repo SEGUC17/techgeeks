@@ -12,7 +12,6 @@ router.get("/registerfailed", function(req, res) {
     res.render("registerfailed.ejs");
 });
 
-
 router.post('/register', function(req, res) {
         client.create({
             username: req.body.username,
