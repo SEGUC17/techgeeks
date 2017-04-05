@@ -25,11 +25,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 
 router.post('/reserve', (function(req, res) {
-    
-
- 
 gym.findOne({Name : req.body.gname}, function(err, gym){
-   
        if(err){
            console.log(err);
            res.send(failed);

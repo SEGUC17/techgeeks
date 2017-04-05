@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Gyms =require('../models/gymmodel');
-var rev =require('../models/reviewmodel');
+var Review =require('../models/reviewmodel');
 
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -14,25 +14,26 @@ router.get('/writereview', function(req, res) {
 
 router.post ('/writereview',(function(req, res){
 
-    Gyms.find({Name:req.body.writegym},
-    function(err, gyms){
+    Gyms.findOne({Name:req.body.writegym},
+    function(err, Gyms){
       if(err){
         console.log(err.message);
-        return res.status('There is a problem here').send();
+        res.send(failed);
       }
-      else if (gyms){
-          var rev =require('../models/reviewmodel');
+      else if (Gyms){
+          var Review =require('../models/reviewmodel');
 
-          reviews.create({Name : req.body.writegym, Reviews: req.body.writereview},
-           function(err,rev){
+          Review.create({Name : req.body.writegym, Reviews: req.body.writereview},
+           function(err,Review){
                if(err){
                    console.log(err)
-                   return res.status('There is a problem here').send();
+                    res.send("failed");
                }
               else {
-                  Console.log("yes");
+                   console.log(Review);
+                  console.log("yes");
                    res.redirect('/reviewdone');
-                   console.log(rev);
+                  
               }
             } )
       }
