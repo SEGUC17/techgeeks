@@ -15,17 +15,17 @@ router.get("/registerfailed", function(req, res) {
 
 router.post('/register', function(req, res) {
         client.create({
-            username: req.body.username,
+            Username: req.body.username,
             Email: req.body.Email,
-            password: req.body.psw,
-            gender: req.body.gender,
-            age: req.body.age
+            Password: req.body.psw,
+            Gender: req.body.gender,
+            Age: req.body.age
         }, function(err, client) {
             if (err) {
                 console.log(err);
                 res.render("registerfailed")
             } else {
-                console.log(client.username);
+                console.log(client.Email);
                 console.log("==========");
                 console.log(client.password);
                 res.redirect("/login");
