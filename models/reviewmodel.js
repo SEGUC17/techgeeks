@@ -5,9 +5,12 @@ var Schema = mongoose.Schema;
 
 
 var ReviewSchema = new Schema({
+     Username: {
+        type: String
+    },
+
     Name: {
         type: String,
-        unique: true
     },
 
     Reviews: {
@@ -16,6 +19,7 @@ var ReviewSchema = new Schema({
     Ratings: {
         type: Number
     },
+
 });
 var Review = mongoose.model("Review", ReviewSchema);
 
