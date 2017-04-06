@@ -5,7 +5,7 @@ var Gyms = require("../models/gymmodel")
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/search", function(req, res) {
-    res.render("search.ejs");
+  res.render('search');
 });
 router.post('/search', function(req, res) {
     Gyms.find({ Name: req.body.searchname }, function(err, gyms) {
