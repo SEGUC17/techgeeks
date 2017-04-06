@@ -16,11 +16,13 @@ router.post('/addgyms', function(req, res) {
             Email: req.body.email,
             Telephone: req.body.telephone,
             Openinghours: req.body.hours,
+            Price: req.body.price,
 
         }, function(err, gyms) {
             if (err) {
                 res.redirect("/addgyms")
             } else {
+              console.log(gyms);
                 res.redirect("/addgyms");
             }
         });
