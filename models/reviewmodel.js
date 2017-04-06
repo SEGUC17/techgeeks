@@ -1,11 +1,9 @@
 var express = require("express");
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-//var myclient = router.get("/client/:id");
-
 
 var ReviewSchema = new Schema({
-     Username: {
+    Username: {
         type: String
     },
 
