@@ -1,0 +1,20 @@
+<h1>Gyms</h1>
+ <div class="row">
+    <% if(x) { %>
+        <% for(var i=0; i<x.length; i++){ %>
+         
+            <div class="card col-xs-4">
+           
+                <h4 class="card-title"> Name: <%= x[i].Name %></h4>
+
+            </div>
+       
+        <% } %>
+    <% } else { %>
+        <p>something wrong</p>
+    <% } %>
+            </div>   
+
+<a href="/reserve"> <button type="button"> Reserve </button></a>
+<a href="/search"> <button type="button"> Search </button></a>
+<a href="/compare"> <button type="button"> Compare </button></a>
