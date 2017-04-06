@@ -2,10 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var photoSchema = mongoose.Schema({
-    photo:{
-        type:String,
-        //required:true,
-
+    photo: {
+        type: String,
     }
 })
 

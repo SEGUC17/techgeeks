@@ -21,10 +21,12 @@ router.post('/compare', (function(req, res) {
     var Name2 = req.body.name2
     Gyms.find({ $and: [{ $or: [{ Name: Name }, { Name: Name2 }] }] }, function(err, gyms) {
         if (err) {
-            res.send(err.message);
+            res.send(failed);
             res.render("comparisonfailed.ejs");
         } else if (gyms) {
             res.render('comparisonpage.ejs', { x: gyms });
+        } else {
+            res.send("we don't have this gym");
         }
     });
 

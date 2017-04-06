@@ -22,7 +22,6 @@ router.post('/addgyms', function(req, res) {
             if (err) {
                 res.redirect("/addgyms")
             } else {
-              console.log(gyms);
                 res.redirect("/addgyms");
             }
         });
