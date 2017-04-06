@@ -18,7 +18,8 @@ router.post('/register', function(req, res) {
             Email: req.body.Email,
             password: req.body.psw,
             gender: req.body.gender,
-            age: req.body.age
+            age: req.body.age,
+            Governance:req.body.governance
         }, function(err, client) {
             if (err) {
                 console.log(err);

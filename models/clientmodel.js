@@ -21,6 +21,11 @@ var clientSchema = new Schema ({
      age: {
         type: Number,
     },
+
+     Governance: {
+        type: String,
+    },
+
      reviews: {
         type: String,
     },
