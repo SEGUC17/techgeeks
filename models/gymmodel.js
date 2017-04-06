@@ -19,8 +19,8 @@ var GymSchema = new Schema({
     Telephone: {
         type: Number,
         unique: true
-
     },
+
     Openinghours: {
         type: String,
     },
@@ -30,6 +30,10 @@ var GymSchema = new Schema({
     Ratings: {
         type: Number,
     },
+    Price: {
+        type: Number,
+    },
+
 });
 
 var Gym = mongoose.model("Gym", GymSchema);
