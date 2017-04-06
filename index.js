@@ -37,6 +37,7 @@ app.use(require("./routes/viewaccount.js"));
 app.use(require("./routes/makereservation.js"));
 app.use(require("./routes/reviewsofagym.js"));
 app.use(require("./routes/viewmyreviews.js"));
+app.use(require("./routes/allgyms.js"));
 
 
 // SERVER LISTENING
