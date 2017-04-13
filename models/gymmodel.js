@@ -10,7 +10,6 @@ var GymSchema = new Schema({
     },
     Location: {
         type: String,
-        unique: true
     },
     Email: {
         type: String,
