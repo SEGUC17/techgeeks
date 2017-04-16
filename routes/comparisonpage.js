@@ -6,7 +6,7 @@ var Gyms = require("../models/gymmodel")
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/comparisonpage", function(req, res) {
-    res.render("comparisonpage.html");
+    res.render("comparisonpage.ejs");
 });
 
 module.exports = router;

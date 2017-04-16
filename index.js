@@ -6,9 +6,7 @@ var engines = require('consolidate');
 mongoose.connect("mongodb://localhost:27017/techgeeks");
 
 var app = express();
-app.set('views', __dirname + '/views');
-app.engine('html', engines.mustache);
-app.set("view engine", "html");
+app.set("view engine", "ejs");
 
 //REQUIRE MODELS
 var Gyms = require("./models/gymmodel");
