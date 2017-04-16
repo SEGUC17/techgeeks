@@ -1,38 +1,17 @@
 var express = require("express");
 var router = express.Router();
 var bodyParser = require("body-parser");
-
-
-//REQUIRE Gym MODEL
+var clientcontroller = require("../controllers/clientcontroller")
 var Gyms = require("../models/gymmodel")
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/compare", function(req, res) {
-    res.render("compare.ejs");
+    res.render("compare.html");
 });
 
 router.get("/comparisonfailed", function(req, res) {
-    res.render("comparisonfailed.ejs");
+    res.render("comparisonfailed.html");
 });
 
-router.post('/compare', (function(req, res) {
-
-    var Name = req.body.name1
-    var Name2 = req.body.name2
-    Gyms.find({ $and: [{ $or: [{ Name: Name }, { Name: Name2 }] }] }, function(err, gyms) {
-        if (err) {
-            res.send(failed);
-            res.render("comparisonfailed.ejs");
-        } else if (gyms) {
-            res.render('comparisonpage.ejs', { x: gyms });
-        } else {
-            res.send("we don't have this gym");
-        }
-    });
-
-}));
-
-
-
-
+router.post('/compare', clientcontroller.Compare);
 module.exports = router;

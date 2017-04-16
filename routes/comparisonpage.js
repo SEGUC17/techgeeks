@@ -5,10 +5,8 @@ var bodyParser = require("body-parser");
 var Gyms = require("../models/gymmodel")
 router.use(bodyParser.urlencoded({ extended: true }));
 
-
 router.get("/comparisonpage", function(req, res) {
-    res.render("comparisonpage.ejs");
+    res.render("comparisonpage.html");
 });
-
 
 module.exports = router;
