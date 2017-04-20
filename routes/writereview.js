@@ -10,7 +10,7 @@ var Clients = require('../models/clientmodel');
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get('/writereview', function(req, res) {
-    res.render("writereviews.ejs");
+    res.render("writereviews.html");
 });
 
 router.post('/writereview', (function(req, res) {

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title> Home page</title>
+    </head>
+    <body>
+
+    <form method = "POST" action = "/reserve">
+         <label> Gym name </label> &nbsp &nbsp  <input type = "text" name = "gname">
+            <br>
+            <br>
+            <label> Username  </label>  &nbsp &nbsp <input type = "text" name = "username"> &nbsp &nbsp
+            <br>
+            <br>
+
+            <label> Mobile number </label> &nbsp &nbsp  <input type = "text" name = "mobilenumber">
+            <br>
+            <br>
+            
+            Payment method  <input type="checkbox" name="cash" value="cash" onclick= "document.qdbform.creditcard.checked=false;" /> Cash <input type="checkbox" name="creditcard" value="creditcard" onclick="document.qdbform.cash.checked=false;" />  Credit card
+          
+            <br>
+            <br>
+            <input type = "submit" value = "Reserve"> 
+     
+        </form>
+
+
+        </body>
+</html>
+

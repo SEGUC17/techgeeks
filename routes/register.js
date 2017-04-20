@@ -5,11 +5,11 @@ var client = require("../models/clientmodel");
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/register", function(req, res) {
-    res.render("register.ejs");
+    res.render("register.html");
 });
 
 router.get("/registerfailed", function(req, res) {
-    res.render("registerfailed.ejs");
+    res.render("registerfailed.html");
 });
 
 router.post('/register', function(req, res) {
