@@ -2,16 +2,17 @@ var express = require("express");
 var router = express.Router();
 var bodyParser = require("body-parser");
 
+
 //REQUIRE Gym MODEL
 var Gyms = require("../models/gymmodel")
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/compare", function(req, res) {
-    res.render("compare.html");
+    res.render("compare.ejs");
 });
 
 router.get("/comparisonfailed", function(req, res) {
-    res.render("comparisonfailed.html");
+    res.render("comparisonfailed.ejs");
 });
 
 router.post('/compare', (function(req, res) {
@@ -21,9 +22,9 @@ router.post('/compare', (function(req, res) {
     Gyms.find({ $and: [{ $or: [{ Name: Name }, { Name: Name2 }] }] }, function(err, gyms) {
         if (err) {
             res.send(failed);
-            res.render("comparisonfailed.html");
+            res.render("comparisonfailed.ejs");
         } else if (gyms) {
-            res.render('comparisonpage.html', { x: gyms });
+            res.render('comparisonpage.ejs', { x: gyms });
         } else {
             res.send("we don't have this gym");
         }
@@ -31,11 +32,4 @@ router.post('/compare', (function(req, res) {
 
 }));
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-
-
-
-module.exports = router;
->>>>>>> 163cd446af9f8539df339f3dddda7c7da4a14a2c

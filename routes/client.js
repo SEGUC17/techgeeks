@@ -13,19 +13,19 @@ router.get("/login", function(req, res) {
 });
 
 router.get("/loginfail", function(req, res) {
-    res.render("loginfail.html");
+    res.render("loginfail.ejs");
 });
 
 router.post('/login', (function(req, res) {
     User.find({ Email: req.body.uemail, password: req.body.psw }, function(err, user) {
         if (err) {
             res.send(err.message);
-            res.redirect("loginfail.html");
+            res.redirect("loginfail.ejs");
         }
         if (user) {
-            res.render('homepageclient.html', { x: user });
+            res.render('homepageclient.ejs', { x: user });
         } else {
-            res.render("loginfail.html");
+            res.render("loginfail.ejs");
         }
     })
 }));

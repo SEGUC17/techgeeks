@@ -9,7 +9,7 @@ router.get("/register", function(req, res) {
 });
 
 router.get("/registerfailed", function(req, res) {
-    res.render("registerfailed.html");
+    res.render("registerfailed.ejs");
 });
 
 router.post('/register', function(req, res) {

@@ -1,45 +1,56 @@
 <html>
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src ="node_modules/angular/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 <head>
 <title>EgyFit</title>
 </head>
 <body background="http://jorgbadura.com//wp-content/uploads/2013/02/Jorg-Badura-01-Nike-Running-NYC-.jpg" >
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">EGYFIT</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="">Home</a></li>
+        <li><a href="/search">Search For Gyms</a></li>
+        <li><a href="">Page 2</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
 <center>
-  <br>
   <br>
   <br>
 <h1>Welcome To EgyFit</h1>
 
 <style>
 h1{
-  color: white
+  font-size: 100;
+  color: white;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 body{
   background-repeat: no-repeat;
   background-size: contain;
   background-size: 100%;
 }
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 50%;
+  button{
+    width: 40%;
+  }
+
+a{
+  font-size: 18;
 }
-#myInput {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 50%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
-}
-
-
-
 </style>
 
 <br>
@@ -48,16 +59,7 @@ button {
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-
-</table>
-<a href="/register"> <button type="button"> Register </button></a>
-<a href="/login"> <button type="button"> Login </button></a>
-<a href="/search"> <button type="button"> Search </button></a>
-<a href="/allgyms"> <button type="button"> View All gyms </button></a>
-
+  <a href="/allgyms"><button type="button" class="btn btn-success">View All Gyms</button></a>
 <br>
 
 

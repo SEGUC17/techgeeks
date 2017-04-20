@@ -1,16 +1,15 @@
-
  <html>
   <head>
   <a href="/viewaccount">Back<a
   <br>
-            <br>  
+            <br>
   <h1>Your info</h1>
  <div class="row">
     <% if(x) { %>
         <% for(var i=0; i<x.length; i++){ %>
-         
+
             <div class="card col-xs-4">
-           
+
                 <h4 class="card-title"> Username: <%= x[i].username %></h4>
                 <h4 class="card-title"> Email: <%= x[i].Email %></h4>
                 <h4 class="card-title"> Password: <%= x[i].password %></h4>
@@ -19,14 +18,14 @@
                 <h4 class="card-title"> Governance: <%= x[i].Governance %></h4>
 
             </div>
-       
+
         <% } %>
     <% } else { %>
         <p>something wrong</p>
     <% } %>
-            </div> 
+            </div>
             <br>
-            <br>  
+            <br>
       <title>Your Account</title>
   </head>
   <body>

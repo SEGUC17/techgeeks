@@ -9,11 +9,11 @@ var reservation = require('../models/reservemodel');
 
 
 router.get("/reserve", function(req, res) {
-    res.render("reserve.html");
+    res.render("reserve.ejs");
 });
 
 router.get("/reservesuccess", function(req, res) {
-    res.render("reservationsuccess.html");
+    res.render("reservationsuccess.ejs");
 });
 
 router.use(bodyParser.urlencoded({ extended: false }));
