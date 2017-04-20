@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    res.render("homepage.ejs");
+    res.render("homepage.html");
 });
 
 router.get("/client/:id")

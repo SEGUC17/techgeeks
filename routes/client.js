@@ -9,23 +9,23 @@ var User = require("../models/clientmodel")
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/login", function(req, res) {
-    res.render("login.ejs");
+    res.render("login.html");
 });
 
 router.get("/loginfail", function(req, res) {
-    res.render("loginfail.ejs");
+    res.render("loginfail.html");
 });
 
 router.post('/login', (function(req, res) {
     User.find({ Email: req.body.uemail, password: req.body.psw }, function(err, user) {
         if (err) {
             res.send(err.message);
-            res.redirect("loginfail.ejs");
+            res.redirect("loginfail.html");
         }
         if (user) {
-            res.render('homepageclient.ejs', { x: user });
+            res.render('homepageclient.html', { x: user });
         } else {
-            res.render("loginfail.ejs");
+            res.render("loginfail.html");
         }
     })
 }));

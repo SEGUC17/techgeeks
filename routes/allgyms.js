@@ -10,9 +10,9 @@ router.get('/allgyms', (function(req, res) {
     Gyms.find({}, function(err, gyms) {
         if (err) {
             res.send(err.message);
-            res.render("homepage.ejs");
+            res.render("homepage.html");
         } else if (gyms) {
-            res.render('allgyms.ejs', { x: gyms });
+            res.render('allgyms.html', { x: gyms });
         }
     });
 }));

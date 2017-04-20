@@ -6,7 +6,7 @@ var Gyms = require("../models/gymmodel")
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/addgyms", function(req, res) {
-    res.render("addgyms.ejs");
+    res.render("addgyms.html");
 });
 
 router.post('/addgyms', function(req, res) {
