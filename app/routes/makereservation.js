@@ -9,7 +9,7 @@ var reservation = require('../models/reservemodel');
 
 
 router.get("/reserve", function(req, res) {
-    res.render("reserve.ejs");
+    res.render("index.html");
 });
 
 router.get("/reservesuccess", function(req, res) {
@@ -18,6 +18,7 @@ router.get("/reservesuccess", function(req, res) {
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
+//http://localhost:3000/api/reserve
 router.post('/reserve', (function(req, res) {
     gym.findOne({ Name: req.body.gname }, function(err, gym) {
         if (err) {
