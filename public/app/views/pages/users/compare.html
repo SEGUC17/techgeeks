@@ -1,10 +1,30 @@
-<form action="/compare" method="POST" id = "compareForm">
-   <h1>Compare</h1>
-   Gym 1 <br> <input type="text" name="name1" placeholder="Name" required id = "name1" /> 
-   <br>
-   <br>
-   Gym 2 <br> <input type="text" name="name2" placeholder="Name" required id = "name2" /> 
-   <br>
-   <br>
-    <input type = "submit" value="Compare">
-   </form>
+<div class="page-header">
+    <title> Compare </title>
+    <div ng-controller="compareController">
+        <center>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Compare </h1>
+            <form ng-submit="compareController.compareGyms();">
+                <!-- Gym1 -->
+                <label>Gym Name 1:</label>
+                <input class="form-control" type="text" name="GymName1" placeholder=" Please Enter Gym Name" ng-model="compareController.data.gym1">
+                <br>
+                <br>
+                <!-- Gym2 -->
+                <label>Gym Name 2:</label>
+                <input class="form-control" type="text" name="GymName2" placeholder=" Please Enter Gym Name" ng-model="compareController.data.gym2">
+                <br>
+                <br>
+                <!-- Compare Button -->
+                <button class="btn btn-primary" type="submit">Compare</button>
+            </form>
+    </div>
+</div>
+</center>
+<script src="/public/app/app.js"></script>
+<script src="/public/app/routes.js"></script>
+<script src="/public/app/controllers/compareController.js"></script>
+<script src="/scripts/script.js"></script>
