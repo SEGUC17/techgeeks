@@ -40,5 +40,13 @@ App.config(function($routeProvider) {
             templateUrl: '../views/users/uploadPhoto.html',
             controller: 'uploadphotoController',
         })
+        .when('/register', {
+            templateUrl: '../views/users/register.html',
+            controller: 'registerController',
+        })
+        .when('/writereviews', {
+            templateUrl: '../views/users/writereviews.html',
+            controller: 'writereviewsController',
+        })
         .otherwise({ redirectTo: '/' });
 });
