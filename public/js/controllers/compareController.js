@@ -1,0 +1,32 @@
+var comparisonPageController = function($scope, $location, factory, $http) {
+    var isLoggedIn = factory.isLoggedIn();
+
+    if (!isLoggedIn) {
+        $location.path('/login');
+    } else {
+        $scope.gym1 = 'Golds gym';
+        $scope.gym2 = 'Peak gym';
+
+        $scope.compare = function() {
+            var body = {
+                gym1: $scope.gym1,
+                gym2: $scope.gym2
+            };
+
+            $http.post('http://localhost:3000/compare', body)
+                .then(function(data) {
+                    var gym1 = data.data.data[0];
+                    var gym2 = data.data.data[1];
+
+                    factory.setGymComparison(gym1, gym2);
+                    $location.path('/comparisonpage');
+                })
+                .catch(function(error) {
+                    alert(error.data.error);
+                });
+        }
+    }
+}
+
+comparisonPageController.$inject = ['$scope', '$location', 'factory', '$http'];
+App.controller('compareController', comparisonPageController);

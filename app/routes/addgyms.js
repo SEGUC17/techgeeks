@@ -3,11 +3,6 @@ var router = express.Router();
 var bodyParser = require("body-parser");
 //REQUIRE GYM MODEL
 var Gyms = require("../models/gymmodel")
-router.use(bodyParser.urlencoded({ extended: false }));
-
-router.get("/addgyms", function(req, res) {
-    res.render("addgyms.ejs");
-});
 
 router.post('/addgyms', function(req, res) {
         Gyms.create({

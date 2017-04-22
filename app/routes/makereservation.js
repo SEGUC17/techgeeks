@@ -1,61 +1,62 @@
 var express = require("express");
 var router = express.Router();
-var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
-var gym = require('../models/gymmodel');
-var client = require('../models/clientmodel');
-var reservation = require('../models/reservemodel');
-
-
-
-router.get("/reserve", function(req, res) {
-    res.render("index.html");
-});
-
-router.get("/reservesuccess", function(req, res) {
-    res.render("reservationsuccess.ejs");
-});
-
-router.use(bodyParser.urlencoded({ extended: false }));
+var Gym = require('../models/gymmodel');
+var Client = require('../models/clientmodel');
+var Reservation = require('../models/reservemodel');
 
 router.post('/reserve', (function(req, res) {
-    gym.findOne({ Name: req.body.gname }, function(err, gym) {
+    Gym.findOne({
+        Name: req.body.gymName
+    }, function(err, gym) {
         if (err) {
-            res.send(failed);
-        } else if (gym) {
-            client.findOne({ username: req.body.username }, function(err, client) {
+            return res.status(500).json({
+                error: 'Interal server error',
+                data: null
+            });
+        }
+
+        if (gym) {
+            Client.findOne({ username: req.body.username }, function(err, client) {
                 if (err) {
-                    console.log(err);
-                    res.send(failed);
-                } else if (client) {
+                    return res.status(500).json({
+                        error: 'Interal server error',
+                        data: null
+                    });
+                }
 
-                    var reservation = require('../models/reservemodel');
-
-                    reservation.create({
-                        gname: req.body.gname,
-                        username: req.body.username,
-                        mobilenumber: req.body.mobilenumber,
+                if (client) {
+                    Reservation.create({
+                        gname: req.body.gymName,
+                        username: req.body.username
                     }, function(err, reservation) {
                         if (err) {
-                            console.log(err);
+                            return res.status(500).json({
+                                error: 'Interal server error',
+                                data: null
+                            });
                         } else {
-                            res.redirect("/reservesuccess");
+                            return res.json({
+                                error: null,
+                                data: reservation
+                            });
                         }
                     })
 
                 } else {
-                    res.send("Please enter your correct username");
+                    return res.status(404).json({
+                        error: 'User not found',
+                        data: null
+                    });
                 }
-            })
-
+            });
         } else {
-            res.send("We don't offer that gym to reserve in");
+            return res.status(404).json({
+                error: 'Gym not found',
+                data: null
+            });
         }
     });
-
-
-
-
 }));
 
 

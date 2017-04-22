@@ -2,34 +2,32 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var router = express.Router();
-var User = require("../models/clientmodel")
+var User = require("../models/clientmodel");
 
-//REQUIRE MODELS
-
-router.use(bodyParser.urlencoded({ extended: false }));
-
-router.get("/login", function(req, res) {
-    res.render("login.html");
-});
-
-router.get("/loginfail", function(req, res) {
-    res.render("loginfail.ejs");
-});
-
-router.post('/login', (function(req, res) {
-    User.find({ Email: req.body.uemail, password: req.body.psw }, function(err, user) {
+router.post('/login', function(req, res) {
+    User.findOne({
+        username: req.body.username,
+        password: req.body.password
+    }, function(err, user) {
         if (err) {
-            res.send(err.message);
-            res.redirect("loginfail.ejs");
+            return res.status(500).json({
+                error: 'Interal server error',
+                data: null
+            });
         }
+
         if (user) {
-            res.render('homepageclient.ejs', { x: user });
+            return res.json({
+                error: null,
+                data: user
+            });
         } else {
-            res.render("loginfail.ejs");
+            return res.status(404).json({
+                error: 'User not found',
+                data: null
+            });
         }
-    })
-}));
-
-
+    });
+});
 
 module.exports = router;
