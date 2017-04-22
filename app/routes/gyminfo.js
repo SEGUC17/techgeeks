@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-var bodyParser = require("body-parser");
 var Gyms = require("../models/gymmodel")
 
 router.get('/gyminfo', function(req, res) {

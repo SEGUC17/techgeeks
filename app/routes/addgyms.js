@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-var bodyParser = require("body-parser");
 //REQUIRE GYM MODEL
 var Gyms = require("../models/gymmodel")
 
