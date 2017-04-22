@@ -1,15 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var bodyParser = require("body-parser");
 var client = require("../models/clientmodel");
-
-// router.get("/register", function(req, res) {
-//     res.render("register.html");
-// });
-
-// router.get("/registerfailed", function(req, res) {
-//     res.render("registerfailed.ejs");
-// });
 
 router.post('/register', function(req, res) {
         client.create({

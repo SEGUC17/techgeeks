@@ -1,12 +1,7 @@
 var express = require("express");
 var router = express.Router();
-var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var uploadPhoto = require("../models/photos");
-
-// router.get('/uploadPhoto', function(req, res) {
-//     res.render("uploadPhoto.html");
-// });
 
 router.post('/uploadPhoto', function(req, res) {
     uploadPhoto.create({

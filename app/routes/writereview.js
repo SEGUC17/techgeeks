@@ -1,15 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Gyms = require('../models/gymmodel');
 var Review = require('../models/reviewmodel');
 var Clients = require('../models/clientmodel');
-
-
-// router.get('/writereview', function(req, res) {
-//     res.render("writereviews.ejs");
-// });
 
 router.post('/writereview', (function(req, res) {
     Gyms.findOne({ Name: req.body.writegym }, function(err, gym) {
