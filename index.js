@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var engines = require('consolidate');
 var router = express.Router();
 var path = require('path');
-var appRoutes = require('./app/routes/makereservation.js');
+// var appRoutes = require('./app/routes/makereservation')(router);
+// var reserveController = require('./public/app/controllers/reserveController');
 mongoose.connect("mongodb://localhost:27017/techgeeks");
 
 var app = express();
@@ -17,7 +18,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('*', function(req, res){
     res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
-app.use ('/makereservation', appRoutes);
+// app.use ('/makereservation', appRoutes);
 
 //REQUIRE MODELS
 var Gyms = require("./app/models/gymmodel");

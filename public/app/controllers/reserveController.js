@@ -4,11 +4,9 @@ angular.module('reserveController', [])
        console.log("form submitted");
         console.log(this.reserveData);
 
-        $http.post('makereservation/reserve', this.reserveData);
+        $http.post('/http://localhost:3000/reserve', this.reserveData);
    }
 });
-
-
 
 
 //http://localhost:3000/api/users

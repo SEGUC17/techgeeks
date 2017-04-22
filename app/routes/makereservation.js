@@ -18,7 +18,7 @@ router.get("/reservesuccess", function(req, res) {
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
-//http://localhost:3000/api/reserve
+//http://localhost:3000/reserve
 router.post('/reserve', (function(req, res) {
     gym.findOne({ Name: req.body.gname }, function(err, gym) {
         if (err) {
