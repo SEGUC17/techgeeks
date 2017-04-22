@@ -1,4 +1,4 @@
-angular.module('app', ['appRoutes', 'reserveController', 'compareController'])
+angular.module('app', ['appRoutes', 'reserveController', 'compareController','gyminfoController'])
 
 
 .config(function() {
