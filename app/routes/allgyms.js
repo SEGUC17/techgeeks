@@ -4,7 +4,6 @@ var bodyParser = require("body-parser");
 
 //REQUIRE Gym MODEL
 var Gyms = require("../models/gymmodel")
-router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get('/allgyms', (function(req, res) {
     Gyms.find({}, function(err, gyms) {

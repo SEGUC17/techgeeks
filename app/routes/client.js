@@ -4,17 +4,13 @@ var mongoose = require('mongoose');
 var router = express.Router();
 var User = require("../models/clientmodel")
 
-//REQUIRE MODELS
+// router.get("/login", function(req, res) {
+//     res.render("login.html");
+// });
 
-router.use(bodyParser.urlencoded({ extended: false }));
-
-router.get("/login", function(req, res) {
-    res.render("login.html");
-});
-
-router.get("/loginfail", function(req, res) {
-    res.render("loginfail.ejs");
-});
+// router.get("/loginfail", function(req, res) {
+//     res.render("loginfail.ejs");
+// });
 
 router.post('/login', (function(req, res) {
     User.find({ Email: req.body.uemail, password: req.body.psw }, function(err, user) {

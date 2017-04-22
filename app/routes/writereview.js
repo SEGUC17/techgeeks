@@ -7,11 +7,9 @@ var Review = require('../models/reviewmodel');
 var Clients = require('../models/clientmodel');
 
 
-router.use(bodyParser.urlencoded({ extended: false }));
-
-router.get('/writereview', function(req, res) {
-    res.render("writereviews.ejs");
-});
+// router.get('/writereview', function(req, res) {
+//     res.render("writereviews.ejs");
+// });
 
 router.post('/writereview', (function(req, res) {
     Gyms.findOne({ Name: req.body.writegym }, function(err, gym) {
@@ -24,18 +22,18 @@ router.post('/writereview', (function(req, res) {
                     res.send(failed);
                 } else if (client) {
 
-                   var Review = require('../models/reviewmodel');
+                    var Review = require('../models/reviewmodel');
 
-                    Review.create({Username:req.body.writeusername, Name: req.body.writegym, Reviews: req.body.writereview, Ratings: req.body.writeratings },
-                     function(err, Review) {
-                        if (err) {
-                            console.log(err);
-                            res.send("failed");
+                    Review.create({ Username: req.body.writeusername, Name: req.body.writegym, Reviews: req.body.writereview, Ratings: req.body.writeratings },
+                        function(err, Review) {
+                            if (err) {
+                                console.log(err);
+                                res.send("failed");
 
-                        } else {
-                            res.redirect('/reviewdone');
-                        }
-                    })
+                            } else {
+                                res.redirect('/reviewdone');
+                            }
+                        })
 
                 } else {
                     res.send("Please enter your correct username");

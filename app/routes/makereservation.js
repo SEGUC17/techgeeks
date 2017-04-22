@@ -8,15 +8,13 @@ var reservation = require('../models/reservemodel');
 
 
 
-router.get("/reserve", function(req, res) {
-    res.render("index.html");
-});
+// router.get("/reserve", function(req, res) {
+//     res.render("index.html");
+// });
 
-router.get("/reservesuccess", function(req, res) {
-    res.render("reservationsuccess.ejs");
-});
-
-router.use(bodyParser.urlencoded({ extended: false }));
+// router.get("/reservesuccess", function(req, res) {
+//     res.render("reservationsuccess.ejs");
+// });
 
 router.post('/reserve', (function(req, res) {
     gym.findOne({ Name: req.body.gname }, function(err, gym) {

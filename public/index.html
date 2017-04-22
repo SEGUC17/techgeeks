@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/routes.js"></script>
-    <script src="app/controllers/reserveController.js"></script>
-    <script src="app/controllers/compareController.js"></script>
-    <script src="app/controllers/gyminfoController.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
+
+    <script src="./js/app.js"></script>
+    <script src="./js/routes.js"></script>
+    <script src="./js/factory.js"></script>
+
+    <script src="./js/controllers/loginController.js"></script>
+    <script src="./js/controllers/reserveController.js"></script>
+    <script src="./js/controllers/compareController.js"></script>
+    <script src="./js/controllers/gyminfoController.js"></script>
 </head>
 <style>
     body {
@@ -22,33 +26,35 @@
     }
 </style>
 
-<body ng-app="EgyFit" background="http://jorgbadura.com//wp-content/uploads/2013/02/Jorg-Badura-01-Nike-Running-NYC-.jpg">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<body background="http://jorgbadura.com//wp-content/uploads/2013/02/Jorg-Badura-01-Nike-Running-NYC-.jpg">
+    <div ng-app="EgyFit">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-                <a class="navbar-brand" href="#">EgyFit</a>
+                    <a class="navbar-brand" href="#">EgyFit</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="#/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                        <li><a href="/reserve">Reserve</a></li>
+                        <li><a href="/search">Search</a></li>
+                        <li><a href="/compare">Compare</a></li>
+                        <li><a href="/gyminfo">Gym Info</a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
-                    <li><a href="/reserve">Reserve</a></li>
-                    <li><a href="/search">Search</a></li>
-                    <li><a href="/compare">Compare</a></li>
-                    <li><a href="/gyminfo">Gym Info</a></li>
-                </ul>
-            </div>
+        </nav>
+        <div class="container">
+            <div ng-view></div>
         </div>
-    </nav>
-    <div class="container">
-        <div ng-view></div>
     </div>
 </body>
 
