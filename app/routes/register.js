@@ -12,10 +12,15 @@ router.post('/register', function(req, res) {
             Governance: req.body.governance
         }, function(err, client) {
             if (err) {
-                console.log(err);
-                res.render("registerfailed")
+                return res.status(500).json({
+                    error: 'Interal server error',
+                    data: null
+                })
             } else {
-                res.redirect("/login");
+                return res.json({
+                    error: null,
+                    data: client
+                });
             }
         });
     }),
