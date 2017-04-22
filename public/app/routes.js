@@ -23,6 +23,11 @@ angular.module('appRoutes', ['ngRoute'])
             controllerAs: 'compareController'
 
         })
+        .when('/gyminfo', {
+            templateUrl: 'app/views/pages/users/gyminfo.html',
+            controller: 'gyminfoController',
+            controllerAs: 'gyminfoController'
+        })
 
 
     .otherwise({ redirecTo: '/' });
