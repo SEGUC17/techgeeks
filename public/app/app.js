@@ -1,6 +1,6 @@
-angular.module('app',['appRoutes', 'reserveController'])
+angular.module('app', ['appRoutes', 'reserveController', 'compareController'])
 
 
-.config(function(){
+.config(function() {
     console.log("testing app");
 });
