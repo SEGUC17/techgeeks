@@ -1,6 +1,1 @@
-angular.module('app', ['appRoutes', 'reserveController', 'compareController','gyminfoController'])
-
-
-.config(function() {
-    console.log("testing app");
-});
+App = angular.module('EgyFit', ['ngRoute']);

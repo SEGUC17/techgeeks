@@ -1,40 +1,24 @@
-angular.module('appRoutes', ['ngRoute'])
-
-
-.config(function($routeProvider, $locationProvider) {
-
-    $routeProvider.when('/', {
-        templateUrl: 'app/views/pages/index.html'
-    })
-
-    .when('/reserve', {
+App.config(function($routeProvider) {
+    $routeProvider
+        .when('/reserve', {
+            templateUrl: 'app/views/pages/users/login.html',
+            controller: 'loginController'
+        })
+        .when('/reserve', {
             templateUrl: 'app/views/pages/users/reserve.html',
-            controller: 'reserveController',
-            controllerAs: 'reserveController'
+            controller: 'reserveController'
         })
         .when('/compare', {
             templateUrl: 'app/views/pages/users/compare.html',
-            controller: 'compareController',
-            controllerAs: 'compareController'
-
-        }).when('/comparisonpage', {
+            controller: 'compareController'
+        })
+        .when('/comparisonpage', {
             templateUrl: 'app/views/pages/users/comparisonpage.html',
             controller: 'compareController',
-            controllerAs: 'compareController'
-
         })
         .when('/gyminfo', {
             templateUrl: 'app/views/pages/users/gyminfo.html',
             controller: 'gyminfoController',
-            controllerAs: 'gyminfoController'
         })
-
-
-    .otherwise({ redirecTo: '/' });
-
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
-
+        .otherwise({ redirecTo: '/' });
 });
