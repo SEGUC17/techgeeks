@@ -4,8 +4,8 @@ var comparisonPageController = function($scope, $location, factory, $http) {
     if (!isLoggedIn) {
         $location.path('/login');
     } else {
-        $scope.gym1 = 'Golds gym';
-        $scope.gym2 = 'Peak gym';
+        $scope.gym1 = '';
+        $scope.gym2 = '';
 
         $scope.compare = function() {
             var body = {
