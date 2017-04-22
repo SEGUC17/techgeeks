@@ -11,11 +11,11 @@ mongoose.connect("mongodb://localhost:27017/techgeeks");
 var app = express();
 
 app.set('view engine', 'html');
-app.engine('html',engines.mustache);
+app.engine('html', engines.mustache);
 app.set('views', __dirname + '/views');
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use(express.static(__dirname + '/public'));
-app.get('*', function(req, res){
+app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 // app.use ('/makereservation', appRoutes);
@@ -29,7 +29,8 @@ var reviews = require("./app/models/reviewmodel");
 
 
 //APP CONFIG
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // ROUTES
 app.use(require("./app/routes/homepage.js"));
