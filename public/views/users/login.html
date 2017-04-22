@@ -1,20 +1,13 @@
 <div>
-    <div class="imgcontainer">
-        <img src="" alt="" class="">
+    <div>
+        <label>Username</label>
+        <input type="text" ng-model="username" placeholder="john.doe" required>
     </div>
-
-    <div class="container">
-        <label><b>E-mail</b></label>
-        <input type="text" placeholder="Enter E-mail" name="uemail" required>
-
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit">Login</button>
-        <input type="checkbox" checked="checked"> Remember me
+    <div>
+        <label>Password</label>
+        <input type="text" ng-model="password" placeholder="12345" required>
     </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
+    <div>
+        <button ng-click="login()">LOGIN</button>
     </div>
 </div>

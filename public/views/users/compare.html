@@ -1,19 +1,19 @@
-<div class="page-header">
+<div>
+    <div class="page-header">
+        <h1> Compare </h1>
+    </div>
 
-    <h1> Compare </h1>
-
+    <div>
+        <div>
+            <label>Gym 1:</label>
+            <input type="text" ng-model="gym1" placeholder="Please enter the first gym">
+        </div>
+        <div>
+            <label>Gym 2:</label>
+            <input type="text" ng-model="gym2" placeholder="Please enter second gym">
+        </div>
+        <div>
+            <button class="btn btn-primary" ng-click="compare()"> Compare</button>
+        </div>
+    </div>
 </div>
-
-<form ng-submit="compareController.compareGyms(data);">
-
-    <label> Gym 1: </label>
-    <input class="form-control" type="text" name="gym1" placeholder="Please enter the first gym" ng-model="compareController.data.gym1">
-    <br>
-    <br>
-    <label> Gym 2: </label>
-    <input class="form-control" type="text" name="gym2" placeholder="Please enter second gym" ng-model="compareController.data.gym2">
-    <br>
-    <br>
-    <button class="btn btn-primary" type="submit"> Compare </button
-
-</form>

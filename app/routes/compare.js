@@ -1,33 +1,38 @@
 var express = require("express");
 var router = express.Router();
-var bodyParser = require("body-parser");
-
 
 //REQUIRE Gym MODEL
 var Gyms = require("../models/gymmodel")
 
-// router.get("/compare", function(req, res) {
-//     res.render("compare.ejs");
-// });
+router.post('/compare', function(req, res) {
+    var gym1 = req.body.gym1;
+    var gym2 = req.body.gym2;
 
-// router.get("/comparisonfailed", function(req, res) {
-//     res.render("comparisonfailed.ejs");
-// });
-
-router.post('/compare', (function(req, res) {
-    var Name = req.body.name1
-    var Name2 = req.body.name2
-    Gyms.find({ $and: [{ $or: [{ Name: Name }, { Name: Name2 }] }] }, function(err, gyms) {
+    Gyms.find({
+        $and: [{
+            $or: [{ Name: gym1 }, { Name: gym2 }]
+        }]
+    }, function(err, gyms) {
         if (err) {
-            res.send(failed);
-            res.render("comparisonfailed.ejs");
-        } else if (gyms) {
-            res.render('comparisonpage.ejs', { x: gyms });
+            return res.status(500).json({
+                error: 'Interal server error',
+                data: null
+            });
+        }
+
+        if (gyms.length === 0) {
+            return res.status(404).json({
+                error: 'Gyms not found',
+                data: null
+            });
         } else {
-            res.send("we don't have this gym");
+            return res.json({
+                error: null,
+                data: gyms
+            });
         }
     });
 
-}));
+});
 
 module.exports = router;

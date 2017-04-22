@@ -14,7 +14,7 @@ App.config(function($routeProvider) {
         })
         .when('/comparisonpage', {
             templateUrl: '../views/users/comparisonpage.html',
-            controller: 'compareController',
+            controller: 'comparisonPageController',
         })
         .when('/gyminfo', {
             templateUrl: '../views/users/gyminfo.html',

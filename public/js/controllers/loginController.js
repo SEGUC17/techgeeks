@@ -1,11 +1,27 @@
-var loginController = function($scope, $location, factory) {
+var loginController = function($scope, $location, factory, $http) {
 
-    console.log('LOGIN CONTROLLER');
+    $scope.username = 'eyad.amin';
+    $scope.password = '1611997e';
 
-    $scope.username = '';
-    $scope.password = '';
+    $scope.login = function() {
+        var body = {
+            username: $scope.username,
+            password: $scope.password
+        };
+
+        $http.post('http://localhost:3000/login', body)
+            .then(function(data) {
+                factory.setUsername(data.data.data.username);
+
+                // TODO: redirect to homepage
+                $location.path('/reserve');
+            })
+            .catch(function(error) {
+                alert(error.data.error);
+            });
+    }
 
 }
 
-loginController.$inject = ['$scope', '$location', 'factory'];
+loginController.$inject = ['$scope', '$location', 'factory', '$http'];
 App.controller('loginController', loginController);
