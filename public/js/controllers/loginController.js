@@ -1,7 +1,7 @@
 var loginController = function($scope, $location, factory, $http) {
 
-    $scope.username = 'eyad.amin';
-    $scope.password = '1611997e';
+    $scope.username = '';
+    $scope.password = '';
 
     $scope.login = function() {
         var body = {
@@ -14,7 +14,7 @@ var loginController = function($scope, $location, factory, $http) {
                 factory.setUsername(data.data.data.username);
 
                 // TODO: redirect to homepage
-                $location.path('/reserve');
+                $location.path('/viewaccount');
             })
             .catch(function(error) {
                 alert(error.data.error);

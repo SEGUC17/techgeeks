@@ -20,5 +20,33 @@ App.config(function($routeProvider) {
             templateUrl: '../views/users/gyminfo.html',
             controller: 'gyminfoController',
         })
+        .when('/search', {
+            templateUrl: '../views/users/search.html',
+            controller: 'searchController',
+        })
+        .when('/viewaccount', {
+            templateUrl: '../views/users/homepageclient.html',
+            controller: 'homepageController',
+        })
+        .when('/reviewsofagym', {
+            templateUrl: '../views/users/reviewsofagym.html',
+            controller: 'reviewsofagymController',
+        })
+        .when('/uploadPhoto', {
+            templateUrl: '../views/users/uploadPhoto.html',
+            controller: 'uploadphotoController',
+        })
+        .when('/uploadPhoto', {
+            templateUrl: '../views/users/uploadPhoto.html',
+            controller: 'uploadphotoController',
+        })
+        .when('/register', {
+            templateUrl: '../views/users/register.html',
+            controller: 'registerController',
+        })
+        .when('/writereviews', {
+            templateUrl: '../views/users/writereviews.html',
+            controller: 'writereviewsController',
+        })
         .otherwise({ redirectTo: '/' });
 });
