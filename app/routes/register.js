@@ -6,7 +6,7 @@ router.post('/register', function(req, res) {
         client.create({
             username: req.body.username,
             Email: req.body.Email,
-            password: req.body.psw,
+            password: req.body.password,
             gender: req.body.gender,
             age: req.body.age,
             Governance: req.body.governance
@@ -15,7 +15,7 @@ router.post('/register', function(req, res) {
                 return res.status(500).json({
                     error: 'Interal server error',
                     data: null
-                })
+                });
             } else {
                 return res.json({
                     error: null,
