@@ -1,3 +1,18 @@
 <div>
     <h1>Reviews of a gym</h1>
+    <form>
+        <p>Username: </p>
+        <p ng-model="review.Username"></p><br>
+        <p>Name: </p>
+        <p ng-model="review.Name"></p><br>
+        <p>Review: </p>
+        <p ng-model="review.Review"></p><br>
+        <p>Rating: </p>
+        <p ng-model="review.Rating"></p><br>
+    </form>
+
+    <div>
+        Username <br> <input type="text" ng-model="uname" placeholder="Name" required/>
+        <button ng-click="viewReviews()">View Reviews</button>
+    </div>
 </div>

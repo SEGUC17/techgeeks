@@ -1,5 +1,5 @@
 App.factory('factory', function($http) {
-
+    var selectedReviewUsername = null;
     var user = {
         username: null,
         Email: null,
@@ -11,10 +11,13 @@ App.factory('factory', function($http) {
         gym1: null,
         gym2: null
     };
-    var GymName = {
-        gymname: null,
-        gymprice: null,
-        gymlocation: null
+    var Gym = {
+        Name: null,
+        Location: null,
+        Email: null,
+        Telephone: null,
+        Openinghours: null,
+        Price: null
     }
 
     return {
@@ -29,7 +32,13 @@ App.factory('factory', function($http) {
         getUser: function() {
             return user;
         },
+        setGym: function(newGym) {
+            Gym = newGym;
+        },
 
+        getGym: function() {
+            return Gym;
+        },
         isLoggedIn: function() {
             return user.username;
         },
@@ -43,7 +52,15 @@ App.factory('factory', function($http) {
             return gymComparison;
         },
 
-        reserve: function(gymName) {
+        setSelectedReviewUsername: function(newSelectedReviewUsername) {
+            selectedReviewUsername = newSelectedReviewUsername;
+        },
+
+        getSelectedReviewUsername: function() {
+            return selectedReviewUsername;
+        }
+
+            reserve: function(gymName) {
             var body = {
                 username: user.username,
                 gymName: gymName,

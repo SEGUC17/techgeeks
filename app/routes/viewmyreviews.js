@@ -5,12 +5,27 @@ var router = express.Router();
 var Reviews = require("../models/reviewmodel")
 
 router.get('/viewmyreviews', function(req, res) {
-    Reviews.find({}, function(err, reviews) {
+    var username = req.query.username;
+
+    Reviews.find({ Username: username }, function(err, reviews) {
         if (err) {
-            res.send(err.message);
-        } else if (reviews) {
-            res.render('viewmyreviews', { x: reviews });
+            return res.status(500).json({
+                error: 'Interal server error',
+                data: null
+            });
+        }
+        if (reviews.length === 0) {
+            return res.status(404).json({
+                error: 'Reviews not found',
+                data: null
+            });
+        } else {
+            return res.json({
+                error: null,
+                data: reviews
+            });
         }
     });
 });
+
 module.exports = router;

@@ -1,20 +1,33 @@
- <html>
-    <body> 
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
 
- <h1>My reviews </h1>
- <div class="row">
-    <% if(x) { %>
-        <% for(var i=0; i<x.length; i++){ %>
-            <div class="card col-xs-4">
-                 <h4 class="card-title"> Username: <%= x[i].Username %></h4>
-                <h4 class="card-title"> Name: <%= x[i].Name %></h4>
-                <h4 class="card-title"> Reviews: <%= x[i].Reviews %></h4>
-                <h4 class="card-title"> Ratings: <%= x[i].Ratings %></h4>
-            </div>
-        <% } %>
-    <% } else { %>
-        <p>something wrong</p>
-    <% } %>
-            </div>   
-</body>
- </html>
+<div class="well">
+    <h1>Reviews</h1>
+    <h4>Username: {{selectedUsername}}</h4>
+    <br />
+    <div>
+        <!--TABLE-->
+        <table style="width:100%">
+            <!--TABLE HEADER-->
+            <tr>
+                <th>Gym Name</th>
+                <th>Review</th>
+                <th>Rating</th>
+            </tr>
+            <!--TABLE HEADER-->
+            <!--TABLE CONTENT-->
+            <tr ng-repeat="review in reviews">
+                <td>{{review.Name}}</td>
+                <td>{{review.Reviews}}</td>
+                <td>{{review.Ratings}}</td>
+            </tr>
+            <!--TABLE CONTENT-->
+        </table>
+        <!--TABLE-->
+    </div>
+</div>
