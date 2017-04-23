@@ -58,9 +58,8 @@ App.factory('factory', function($http) {
 
         getSelectedReviewUsername: function() {
             return selectedReviewUsername;
-        }
-
-            reserve: function(gymName) {
+        },
+        reserve: function(gymName) {
             var body = {
                 username: user.username,
                 gymName: gymName,

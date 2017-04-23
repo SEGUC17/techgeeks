@@ -44,5 +44,9 @@ App.config(function($routeProvider) {
             templateUrl: '../views/users/writereviews.html',
             controller: 'writereviewsController',
         })
+        .when('/viewmyreviews', {
+            templateUrl: '../views/users/viewmyreviews.html',
+            controller: 'viewmyreviewsController',
+        })
         .otherwise({ redirectTo: '/' });
 });
