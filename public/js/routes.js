@@ -18,7 +18,7 @@ App.config(function($routeProvider) {
         })
         .when('/gyminfo', {
             templateUrl: '../views/users/gyminfo.html',
-            controller: 'gyminfoController',
+            //controller: 'gyminfoController',
         })
         .when('/search', {
             templateUrl: '../views/users/search.html',

@@ -8,6 +8,11 @@ App.factory('factory', function($http) {
         gym1: null,
         gym2: null
     };
+    var GymName = {
+        gymname: null,
+        gymprice: null,
+        gymlocation: null
+    }
 
     return {
         setUsername: function(username) {
@@ -36,5 +41,13 @@ App.factory('factory', function($http) {
             return $http.post('http://localhost:3000/reserve', body);
         }
     }
-
 });
+// setGymName: function(gymname, gymprice, gymlocation){
+//     gymSearch.gymname = gymname,
+//     gymSearch.gymprice = gymprice,
+//     gymSearch.gymlocation = gymlocation,
+
+// }     
+// getGymName: function(){
+//     return gymSearch;
+// }

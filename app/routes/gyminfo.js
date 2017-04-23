@@ -3,14 +3,19 @@ var router = express.Router();
 var Gyms = require("../models/gymmodel")
 
 router.get('/gyminfo', function(req, res) {
-    Gyms.find({}, function(err, gyms) {
+    Gyms.findOne({}, function(err, gyms) {
         if (err) {
-            res.send(err.message);
-        } else if (gyms) {
-            res.render('gyminfo', { x: gyms });
-        }
+            return res.status(500).json({
+                error: 'Interal server error',
+                data: null
+            });
+        } else {
+            return res.json({
+                error: null,
+                data: gyms
+            });
+        };
     });
-});
-
+})
 
 module.exports = router;
