@@ -11,8 +11,7 @@ var loginController = function($scope, $location, factory, $http) {
 
         $http.post('http://localhost:3000/login', body)
             .then(function(data) {
-                factory.setUsername(data.data.data.username);
-
+                factory.setUser(data.data.data);
                 // TODO: redirect to homepage
                 $location.path('/viewaccount');
             })

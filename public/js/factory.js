@@ -1,7 +1,10 @@
 App.factory('factory', function($http) {
 
     var user = {
-        username: null
+        username: null,
+        Email: null,
+        age: null,
+        gender: null
     };
 
     var gymComparison = {
@@ -15,8 +18,16 @@ App.factory('factory', function($http) {
     }
 
     return {
-        setUsername: function(username) {
-            user.username = username;
+        getUsername: function() {
+            return user.username;
+        },
+
+        setUser: function(newUser) {
+            user = newUser;
+        },
+
+        getUser: function() {
+            return user;
         },
 
         isLoggedIn: function() {
@@ -42,12 +53,3 @@ App.factory('factory', function($http) {
         }
     }
 });
-// setGymName: function(gymname, gymprice, gymlocation){
-//     gymSearch.gymname = gymname,
-//     gymSearch.gymprice = gymprice,
-//     gymSearch.gymlocation = gymlocation,
-
-// }     
-// getGymName: function(){
-//     return gymSearch;
-// }

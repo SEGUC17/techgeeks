@@ -14,6 +14,11 @@ router.post('/search', function(req, res) {
                 error: null,
                 data: gyms
             });
+        } else {
+            return res.status(404).json({
+                error: 'Gym not found',
+                data: null
+            });
         }
     });
 });
