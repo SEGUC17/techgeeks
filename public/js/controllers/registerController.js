@@ -2,25 +2,25 @@ var registerController = function($scope, $location, factory, $http) {
     console.log("Controller is here")
     $scope.username = '';
     $scope.Email = '';
-    $scope.psw = '';
+    $scope.password = '';
     $scope.gender = '';
     $scope.age = '';
-    $scope.Governance = '';
+    $scope.governance = '';
 
     $scope.register = function() {
         var body = {
             username: $scope.username,
             Email: $scope.Email,
-            password: $scope.psw,
+            password: $scope.password,
             gender: $scope.gender,
             age: $scope.age,
-            Governance: $scope.Governance,
+            Governance: $scope.governance,
         };
 
         $http.post('http://localhost:3000/register', body)
             .then(function(data) {
                 alert('user created!');
-                $location.path('/viewaccoint');
+                $location.path('/viewaccount');
             })
             .catch(function(error) {
                 alert(error.data.error);
