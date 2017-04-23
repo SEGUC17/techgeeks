@@ -3,12 +3,18 @@ var router = express.Router();
 var Gyms = require("../models/gymmodel")
 
 router.post('/search', function(req, res) {
-    Gyms.find({ $and: [{ $or: [{ Name: req.body.searchname }, { Price: req.body.searchprice }, { Location: req.body.searchaddress }] }] }, function(err, gyms) {
+    Gyms.find({ $and: [{ $or: [{ Name: req.body.gymname }, { Price: req.body.gymprice }, { Location: req.body.gymlocation }] }] }, function(err, gyms) {
         if (err) {
-            res.send(err.message);
+          return res.status(500).json({
+              error: 'Interal server error',
+              data: null
+          });
         } else if (gyms) {
-            res.render('gyminfo', { x: gyms });
-        }
+                  return res.json({
+                      error: null,
+                      data: gyms
+                  });
+            }
     });
 });
 
