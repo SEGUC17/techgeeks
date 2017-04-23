@@ -36,10 +36,6 @@ App.config(function($routeProvider) {
             templateUrl: '../views/users/uploadPhoto.html',
             controller: 'uploadphotoController',
         })
-        .when('/uploadPhoto', {
-            templateUrl: '../views/users/uploadPhoto.html',
-            controller: 'uploadphotoController',
-        })
         .when('/register', {
             templateUrl: '../views/users/register.html',
             controller: 'registerController',
