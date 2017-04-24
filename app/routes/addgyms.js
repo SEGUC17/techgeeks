@@ -1,16 +1,16 @@
 var express = require("express");
 var router = express.Router();
-var client = require("../models/clientmodel");
-
-router.post('/register', function(req, res) {
-        client.create({
-            username: req.body.username,
-            Email: req.body.Email,
-            password: req.body.password,
-            gender: req.body.gender,
-            age: req.body.age,
-            Governance: req.body.Governance
-        }, function(err, client) {
+var Gyms = require("../models/gymmodel");
+//ADDING GYMS INTO DATABASE
+router.post('/addgyms', function(req, res) {
+        Gyms.create({
+            Name: req.body.name,
+            Location: req.body.location,
+            Email: req.body.email,
+            Telephone: req.body.telephone,
+            Openinghours: req.body.hours,
+            Price: req.body.price
+        }, function(err, gyms) {
             if (err) {
                 return res.status(500).json({
                     error: 'Interal server error',
@@ -19,7 +19,7 @@ router.post('/register', function(req, res) {
             } else {
                 return res.json({
                     error: null,
-                    data: client
+                    data: gyms
                 });
             }
         });
