@@ -11,7 +11,7 @@ var searchController = function($scope, $location, factory, $http) {
         };
         $http.post('http://localhost:3000/search', body)
             .then(function(data) {
-                console.log(data);
+                // console.log(data.data.data);
                 factory.setGym(data.data.data);
                 $location.path('/gyminfo');
             })

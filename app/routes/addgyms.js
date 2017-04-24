@@ -14,9 +14,15 @@ router.post('/addgyms', function(req, res) {
 
         }, function(err, gyms) {
             if (err) {
-                res.redirect("/addgyms")
+                return res.status(500).json({
+                    error: 'Interal server error',
+                    data: null
+                });
             } else {
-                res.redirect("/addgyms");
+                return res.json({
+                    error: null,
+                    data: gyms
+                });
             }
         });
     }),

@@ -1,8 +1,24 @@
 <div>
-    <h1>Write a Review</h1>
-    <br><br> Write your username: <input type="text" name="writeusername"><br><br>
-    <div>
-        Write Gym: <input type="text" name="writegym"> <br><br> Write Review: <input type="text" name="writereview"><br><br> Write Ratings: <input type="text" name="writeratings"><br><br>
+    <div class="page-header">
+        <h1> Write Review </h1>
     </div>
-    <button type="Done" value="Post">Post</button>
+
+    <div>
+        <div>
+            <label>Gym:</label>
+            <input type="text" ng-model="gymName" placeholder="Please enter your gym">
+        </div>
+        <div>
+            <label>Write Review:</label>
+            <input type="text" ng-model="review" placeholder="Please enter your review">
+        </div>
+        <div>
+            <label>Rating:</label>
+            <input type="text" ng-model="rating" placeholder="Please enter your rate">
+        </div>
+
+        <div>
+            <button class="btn btn-primary" ng-click="reviews()"> Submit</button>
+        </div>
+    </div>
 </div>

@@ -18,7 +18,7 @@ App.factory('factory', function($http) {
         Telephone: null,
         Openinghours: null,
         Price: null
-    }
+    };
 
     return {
         getUsername: function() {
@@ -66,6 +66,15 @@ App.factory('factory', function($http) {
             };
 
             return $http.post('http://localhost:3000/reserve', body);
+        },
+        review: function(gymName, review, rating) {
+            var body = {
+                username: user.username,
+                gymName: gymName,
+                review: review,
+                rating: rating
+            }
+
         }
     }
 });

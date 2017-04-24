@@ -6,36 +6,44 @@ var Review = require('../models/reviewmodel');
 var Clients = require('../models/clientmodel');
 
 router.post('/writereview', (function(req, res) {
-    Gyms.findOne({ Name: req.body.writegym }, function(err, gym) {
+    Gyms.findOne({ Name: req.body.gymName }, function(err, gym) {
         if (err) {
-            res.send(failed);
+            res.status(500).json({
+                error: 'Interal server error',
+                data: null
+            });
+
         } else if (gym) {
-            Clients.findOne({ username: req.body.writeusername }, function(err, client) {
+            Clients.findOne({ username: req.body.username }, function(err, client) {
                 if (err) {
                     console.log(err);
-                    res.send(failed);
+                    res.status(500).json({
+                        error: 'Interal server error',
+                        data: null
+                    });
                 } else if (client) {
 
                     var Review = require('../models/reviewmodel');
 
-                    Review.create({ Username: req.body.writeusername, Name: req.body.writegym, Reviews: req.body.writereview, Ratings: req.body.writeratings },
+                    Review.create({ Username: req.body.username, Name: req.body.gymName, Reviews: req.body.review, Ratings: req.body.rating },
                         function(err, Review) {
                             if (err) {
                                 console.log(err);
-                                res.send("failed");
-
+                                res.status(500).json({
+                                    error: 'Interal server error',
+                                    data: null
+                                });
                             } else {
-                                res.redirect('/reviewdone');
+                                return res.json({
+                                    error: null,
+                                    data: user
+                                });
                             }
                         })
 
-                } else {
-                    res.send("Please enter your correct username");
                 }
             })
 
-        } else {
-            res.send("We don't offer that gym to write about");
         }
     });
 
@@ -43,9 +51,5 @@ router.post('/writereview', (function(req, res) {
 
 
 }));
-
-
-router.get("/client/:id")
-
 
 module.exports = router;
