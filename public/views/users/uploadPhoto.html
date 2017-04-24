@@ -1,3 +1,40 @@
-<div>
-    <h1>Upload your photo</h1>
-</div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Your Photo</title>
+
+
+    <style>
+        .form-control {
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <center>
+            <h1>Upload Your Photo Here</h1>
+
+            <form>
+                <legend>Choose a photo to upload</legend>
+                <label for="name">UserName:</label>
+                <input type="text" name="name" id="name" ng-model="name" required/>
+                <br/>
+                <label for="file">File:</label>
+                <input type="file" class="form-control" accept="image/*" id="file" ng-model="file" ngf-select ngf-max-size="25MB" required/>
+
+                <br/> Image Preview:
+                <br>
+                <img id="pic" src="#" alt="your image" />
+                <br>
+                <button class="btn btn-primary" ng-click="uploadPhoto()"> Upload</button>
+            </form>
+        </center>
+    </div>
+
+
+</body>
+
+</html>

@@ -8,16 +8,15 @@ var writereviewsController = function($scope, $location, factory, $http) {
         $scope.review = '';
         $scope.rating = '';
 
-        $scope.reviews = function() {
+        $scope.writereview = function() {
             var body = {
                 gymName: $scope.gymName,
                 review: $scope.review,
                 rating: $scope.rating
             };
             $http.post('http://localhost:3000/writereview', body)
-            factory.reviews(username, gymName)
                 .then(function(data) {
-                    console.log("123")
+                    console.log(data.data.data);
                     alert('Reviews done!');
                 })
                 .catch(function(error) {

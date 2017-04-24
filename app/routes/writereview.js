@@ -36,11 +36,10 @@ router.post('/writereview', (function(req, res) {
                             } else {
                                 return res.json({
                                     error: null,
-                                    data: client
+                                    data: Review
                                 });
                             }
                         })
-
                 }
             })
 

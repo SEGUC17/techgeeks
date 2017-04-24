@@ -19,14 +19,11 @@ App.factory('factory', function($http) {
         Openinghours: null,
         Price: null
     };
-    // var Reviews = {
-    //     Username: null,
-    //     Name: null,
-    //     Reviews: null,
-    //     Ratings: null,
-    // };
-
     return {
+        setUsername: function(username) {
+            user.username = username;
+        },
+
         getUsername: function() {
             return user.username;
         },
@@ -45,11 +42,6 @@ App.factory('factory', function($http) {
         getGym: function() {
             return Gym;
         },
-
-        // getReviews: function() {
-        //     return Reviews;
-        // },
-
         isLoggedIn: function() {
             return user.username;
         },
@@ -78,14 +70,11 @@ App.factory('factory', function($http) {
 
             return $http.post('http://localhost:3000/reserve', body);
         },
-        review: function(gymName, review, rating) {
+        review: function() {
             var body = {
                 username: user.username,
-                gymName: gymName,
-                review: review,
-                rating: rating
+                //  gymName: Gym.Name,
             }
-
         }
     }
 });
