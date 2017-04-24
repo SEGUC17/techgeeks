@@ -1,7 +1,8 @@
 var express = require("express");
 var router = express.Router();
+//REQUIRE Clients MODEL
 var client = require("../models/clientmodel");
-
+//REGISTER FOR A NEW GYM
 router.post('/register', function(req, res) {
         client.create({
             username: req.body.username,

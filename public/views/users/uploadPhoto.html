@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <title>Upload Your Photo</title>
 
-
     <style>
         .form-control {
             width: 40%;
+        }
+        
+        img {
+            size: 10%;
+        }
+        
+        * {
+            color: white;
+        }
+        
+        legend {
+            color: white;
         }
     </style>
 </head>
@@ -17,24 +28,28 @@
         <center>
             <h1>Upload Your Photo Here</h1>
 
-            <form>
+            <form ng-submit="uploadPhoto()">
                 <legend>Choose a photo to upload</legend>
                 <label for="name">UserName:</label>
-                <input type="text" name="name" id="name" ng-model="name" required/>
+                <input type="text" class="form-control" name="name" id="name" ng-model="name" required/>
                 <br/>
                 <label for="file">File:</label>
-                <input type="file" class="form-control" accept="image/*" id="file" ng-model="file" ngf-select ngf-max-size="25MB" required/>
+                <input type="file" ng-init="file" class="form-control" accept="image/*" id="file" ng-model="file" ngf-select ngf-max-size="25MB" required/>
 
                 <br/> Image Preview:
                 <br>
-                <img id="pic" src="#" alt="your image" />
+
+                <img ng-src="file" id="pic" src="#" alt="your image" />
                 <br>
-                <button class="btn btn-primary" ng-click="uploadPhoto()"> Upload</button>
+                <button type="submit" class="btn btn-primary"> Upload</button>
             </form>
         </center>
     </div>
 
 
 </body>
+<script>
+</script>
+
 
 </html>
