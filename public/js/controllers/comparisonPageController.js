@@ -1,9 +1,10 @@
 var comparisonPageController = function($scope, $location, factory, $http) {
+// saving the returned value of the gym comparison function in a scope
     $scope.gymComparison = factory.getGymComparison();
 
     $scope.gym1 = $scope.gymComparison.gym1;
     $scope.gym2 = $scope.gymComparison.gym2;
-
+// 
     $scope.reserve = function(gymName) {
         factory.reserve(gymName)
             .then(function(data) {
