@@ -5,7 +5,7 @@ var reviewsofagymController = function($scope, $location, factory, $http) {
         factory.setSelectedReviewUsername($scope.uname);
         $location.path('/viewmyreviews');
     }
-    //calls the get function in the backend to get all the reviews
+     //SEARCH IN THE DATABASE FOR CERTAIN GYM AND VIEW ITS
     $http.get('http://localhost:3000/reviewsofagym', {})
         .then(function(response) {
             console.log(response.data.data)
