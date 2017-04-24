@@ -19,6 +19,12 @@ App.factory('factory', function($http) {
         Openinghours: null,
         Price: null
     };
+    // var Reviews = {
+    //     Username: null,
+    //     Name: null,
+    //     Reviews: null,
+    //     Ratings: null,
+    // };
 
     return {
         getUsername: function() {
@@ -39,6 +45,11 @@ App.factory('factory', function($http) {
         getGym: function() {
             return Gym;
         },
+
+        // getReviews: function() {
+        //     return Reviews;
+        // },
+
         isLoggedIn: function() {
             return user.username;
         },

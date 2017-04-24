@@ -1,16 +1,25 @@
 <div>
-    <h1>Reviews of a gym</h1>
-    <form>
-        <p>Username: </p>
-        <p ng-model="review.Username"></p><br>
-        <p>Name: </p>
-        <p ng-model="review.Name"></p><br>
-        <p>Review: </p>
-        <p ng-model="review.Review"></p><br>
-        <p>Rating: </p>
-        <p ng-model="review.Rating"></p><br>
-    </form>
+    <h1>Reviews of gyms</h1>
 
+    <table style="width:100%">
+        <!--TABLE HEADER-->
+        <tr>
+            <th>Username</th>
+            <th>Gym Name</th>
+            <th>Review</th>
+            <th>Rating</th>
+        </tr>
+        <!--TABLE HEADER-->
+        <!--TABLE CONTENT-->
+        <tr ng-repeat="review in allreviews">
+            <td>{{allreviews.Username}}</td>
+            <td>{{allreviews.Name}}</td>
+            <td>{{allreviews.Reviews}}</td>
+            <td>{{allreviews.Ratings}}</td>
+
+        </tr>
+        <!--TABLE CONTENT-->
+    </table>
     <div>
         Username <br> <input type="text" ng-model="uname" placeholder="Name" required/>
         <button ng-click="viewReviews()">View Reviews</button>

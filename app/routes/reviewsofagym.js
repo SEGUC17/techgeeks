@@ -6,22 +6,16 @@ var Reviews = require("../models/reviewmodel")
 router.get('/reviewsofagym', function(req, res) {
     Reviews.find({}, function(err, reviews) {
         if (err) {
-            res.send(err.message);
+            return res.status(500).json({
+                error: 'Interal server error',
+                data: null
+            });
         } else if (reviews) {
-            res.render('reviewsofagym', { x: reviews });
+            return res.json({
+                error: null,
+                data: reviews
+            });
         }
     });
 });
-
-router.post('/reviewsofagym', (function(req, res) {
-    Reviews.findOne({ Username: req.body.Name }, function(err, reviews) {
-        if (err) {
-            res.send(err.message);
-            res.redirect("reviewfailed.ejs");
-        } else if (reviews) {
-            res.render('viewmyreviews', { x: reviews });
-        }
-    })
-}));
-
 module.exports = router;

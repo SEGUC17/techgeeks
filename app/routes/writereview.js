@@ -36,7 +36,7 @@ router.post('/writereview', (function(req, res) {
                             } else {
                                 return res.json({
                                     error: null,
-                                    data: user
+                                    data: client
                                 });
                             }
                         })
@@ -46,10 +46,6 @@ router.post('/writereview', (function(req, res) {
 
         }
     });
-
-
-
-
 }));
 
 module.exports = router;
