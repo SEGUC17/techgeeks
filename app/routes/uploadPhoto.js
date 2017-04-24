@@ -3,8 +3,6 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var uploadPhoto = require("../models/photos");
 var fs = require('fs');
-var multer = require('multer');
-var upload = multer({ dest: 'uploads/' });
 router.post('/uploadPhoto', function(req, res) {
         // photo is created
         uploadPhoto.create({
