@@ -9,6 +9,7 @@ var searchController = function($scope, $location, factory, $http) {
             gymprice: $scope.gymprice,
             gymlocation: $scope.gymlocation
         };
+        //POSTING THE DATA IN FRONT END AND COMPARE IT WITH DATABASE
         $http.post('http://localhost:3000/search', body)
             .then(function(data) {
                 // console.log(data.data.data);

@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var Gyms = require("../models/gymmodel")
-
+//Searching for gyms by their names or price or location
 router.post('/search', function(req, res) {
     Gyms.findOne({ $and: [{ $or: [{ Name: req.body.gymname }, { Price: req.body.gymprice }, { Location: req.body.gymlocation }] }] }, function(err, gyms) {
         if (err) {
