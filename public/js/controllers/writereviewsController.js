@@ -4,12 +4,14 @@ var writereviewsController = function($scope, $location, factory, $http) {
     if (!isLoggedIn) {
         $location.path('/login');
     } else {
+        $scope.username = factory.getUsername()
         $scope.gymName = '';
         $scope.review = '';
         $scope.rating = '';
 
         $scope.writereview = function() {
             var body = {
+                username: $scope.username,
                 gymName: $scope.gymName,
                 review: $scope.review,
                 rating: $scope.rating
