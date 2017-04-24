@@ -16,7 +16,7 @@ var registerController = function($scope, $location, factory, $http) {
             age: $scope.age,
             Governance: $scope.Governance,
         };
-
+        //REGISTER IN FRONTEND AND SAVED IN THE DATABASE
         $http.post('http://localhost:3000/register', body)
             .then(function(data) {
                 alert('user created!');
