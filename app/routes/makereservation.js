@@ -7,6 +7,7 @@ var Client = require('../models/clientmodel');
 var Reservation = require('../models/reservemodel');
 
 //post method to reserve a place in the gym
+
 router.post('/reserve', (function(req, res) {
    Reservation.findOne(
        {
