@@ -7,7 +7,7 @@ var comparisonPageController = function($scope, $location, factory, $http) {
             gym1: $scope.gym1,
             gym2: $scope.gym2
         };
-
+        //POSTING THE DATA IN FRONT END AND COMPARE IT WIT DATABASE
         $http.post('http://localhost:3000/compare', body)
             .then(function(data) {
                 var gym1 = data.data.data[0];

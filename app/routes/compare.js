@@ -1,9 +1,8 @@
 var express = require("express");
 var router = express.Router();
-
 //REQUIRE Gym MODEL
-var Gyms = require("../models/gymmodel")
-
+var Gyms = require("../models/gymmodel");
+// COMPARING BETWEEN TWO GYMS ACCORDING TO THEIR NAMES
 router.post('/compare', function(req, res) {
     var gym1 = req.body.gym1;
     var gym2 = req.body.gym2;

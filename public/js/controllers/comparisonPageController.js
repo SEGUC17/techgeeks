@@ -3,7 +3,7 @@ var comparisonPageController = function($scope, $location, factory, $http) {
 
     $scope.gym1 = $scope.gymComparison.gym1;
     $scope.gym2 = $scope.gymComparison.gym2;
-
+    // RESERVING A CERTAIN GYM 
     $scope.reserve = function(gymName) {
         factory.reserve(gymName)
             .then(function(data) {
