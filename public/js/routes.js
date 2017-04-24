@@ -1,5 +1,4 @@
 App.config(function($routeProvider) {
-    //SPECIFIYING ROUTES
     $routeProvider
         .when('/login', {
             templateUrl: '../views/users/login.html',

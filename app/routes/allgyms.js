@@ -1,8 +1,9 @@
 var express = require("express");
 var router = express.Router();
-//REQUIRE GYM MODEL
-var Gyms = require("../models/gymmodel");
-//GETTING ALL THE GYMS IN THE DATABASE
+
+//REQUIRE Gym MODEL
+var Gyms = require("../models/gymmodel")
+
 router.get('/allgyms', (function(req, res) {
     Gyms.find({}, function(err, gyms) {
         if (err) {
@@ -18,4 +19,5 @@ router.get('/allgyms', (function(req, res) {
         }
     });
 }));
+
 module.exports = router;

@@ -1,5 +1,7 @@
 var viewgymsController = function($scope, $location, factory, $http) {
-    //GETTING GYM NAMES ENTERED FORM THE BACKEND   
+    console.log("testing viewgyms controller")
+
+
     $http.get('http://localhost:3000/allgyms', {})
         .then(function(response) {
             console.log(response.data.data)
