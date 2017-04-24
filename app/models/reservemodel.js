@@ -13,7 +13,7 @@ var reserveSchema = new Schema({
     mobilenumber: {
         type: Number,
     }
-    
+
 });
 
 var reservation = mongoose.model("reservation", reserveSchema);
@@ -21,5 +21,3 @@ var reservation = mongoose.model("reservation", reserveSchema);
 //exporting the schema
 
 module.exports = reservation;
-
-

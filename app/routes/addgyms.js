@@ -1,8 +1,7 @@
 var express = require("express");
 var router = express.Router();
-//REQUIRE GYM MODEL
-var Gyms = require("../models/gymmodel")
-
+var Gyms = require("../models/gymmodel");
+//ADDING GYMS INTO DATABASE
 router.post('/addgyms', function(req, res) {
         Gyms.create({
             Name: req.body.name,
@@ -10,8 +9,7 @@ router.post('/addgyms', function(req, res) {
             Email: req.body.email,
             Telephone: req.body.telephone,
             Openinghours: req.body.hours,
-            Price: req.body.price,
-
+            Price: req.body.price
         }, function(err, gyms) {
             if (err) {
                 return res.status(500).json({
@@ -26,4 +24,5 @@ router.post('/addgyms', function(req, res) {
             }
         });
     }),
+
     module.exports = router;

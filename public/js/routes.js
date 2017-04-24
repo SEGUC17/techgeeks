@@ -52,7 +52,7 @@ App.config(function($routeProvider) {
             templateUrl: '../views/users/addgyms.html',
             controller: 'addgymsController',
         })
-         .when('/viewgyms', {
+        .when('/viewgyms', {
             templateUrl: '../views/users/viewgyms.html',
             controller: 'viewgymsController',
         })

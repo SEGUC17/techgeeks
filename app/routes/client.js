@@ -1,8 +1,9 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
+//REQUIRING CLIENT MODEL
 var User = require("../models/clientmodel");
-
+// LOGGIN IN BY SEARCHING FOR USER IN THE DATABASE
 router.post('/login', function(req, res) {
     User.findOne({
         username: req.body.username,
@@ -14,7 +15,6 @@ router.post('/login', function(req, res) {
                 data: null
             });
         }
-
         if (user) {
             return res.json({
                 error: null,

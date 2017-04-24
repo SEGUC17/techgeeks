@@ -9,23 +9,21 @@ var Reservation = require('../models/reservemodel');
 //post method to reserve a place in the gym
 
 router.post('/reserve', (function(req, res) {
-   Reservation.findOne(
-       {
-           $and: 
-            [{ gname: req.body.gymName }, { username: req.body.username }]
-        
-       }, function(err, reservation){
-           if(err){
-               return res.status(500).json({
+    Reservation.findOne({
+        $and: [{ gname: req.body.gymName }, { username: req.body.username }]
+
+    }, function(err, reservation) {
+        if (err) {
+            return res.status(500).json({
                 error: 'Interal server error',
                 data: null
             });
-           } else if (reservation){
-               return res.status(500).json({
+        } else if (reservation) {
+            return res.status(500).json({
                 error: "You already reserved a place",
                 data: null
             });
-           } else{
+        } else {
 
 
             Gym.findOne({
@@ -80,10 +78,9 @@ router.post('/reserve', (function(req, res) {
                 }
             });
 
-                }
-            }
-        )
-        }));
+        }
+    })
+}));
 
 //exporting the router
 module.exports = router;

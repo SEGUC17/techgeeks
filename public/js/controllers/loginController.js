@@ -1,14 +1,14 @@
 var loginController = function($scope, $location, factory, $http) {
-
+    // READING TEXTBOXES ENTERED FROM FRONTEND
     $scope.username = '';
     $scope.password = '';
-
+    //
     $scope.login = function() {
         var body = {
             username: $scope.username,
             password: $scope.password
         };
-
+        //CALLING THE LOGIN FUNCTION FROM THE BACKEND
         $http.post('http://localhost:3000/login', body)
             .then(function(data) {
                 factory.setUser(data.data.data);

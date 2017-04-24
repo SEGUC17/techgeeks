@@ -1,10 +1,13 @@
 var express = require("express");
 var router = express.Router();
 var mongoose = require('mongoose');
+//REQUIRE Gym MODEL
 var Gyms = require('../models/gymmodel');
+//REQUIRE Reviews MODEL
 var Review = require('../models/reviewmodel');
+//REQUIRE Clients MODEL
 var Clients = require('../models/clientmodel');
-
+//WRITING REVIEWS ON THE GYMS
 router.post('/writereview', (function(req, res) {
     Gyms.findOne({ Name: req.body.gymName }, function(err, gym) {
         if (err) {

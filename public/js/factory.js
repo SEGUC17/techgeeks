@@ -1,16 +1,20 @@
 App.factory('factory', function($http) {
+
+    // to store the username to display his/her reviews
     var selectedReviewUsername = null;
+    // CREATING AN EMPTY USER
     var user = {
         username: null,
         Email: null,
         age: null,
         gender: null
     };
-
+    // INITIALIZING GYMS TO COMPARE BETWEEN THEM
     var gymComparison = {
         gym1: null,
         gym2: null
     };
+    // CREATING AN EMPTY GYM
     var Gym = {
         Name: null,
         Location: null,
@@ -19,6 +23,7 @@ App.factory('factory', function($http) {
         Openinghours: null,
         Price: null
     };
+    //SETTING AND GETTING DATA ACCORDING TO WHAT WILL BE ENTERED
     return {
         setUsername: function(username) {
             user.username = username;
@@ -73,7 +78,6 @@ App.factory('factory', function($http) {
         review: function() {
             var body = {
                 username: user.username,
-                //  gymName: Gym.Name,
             }
         }
     }
