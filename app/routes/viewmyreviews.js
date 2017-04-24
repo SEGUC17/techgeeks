@@ -4,6 +4,7 @@ var router = express.Router();
 //REQUIRE Gym MODEL
 var Reviews = require("../models/reviewmodel")
 
+//GETTING THE REVIEWS OF A CERTAIN USER
 router.get('/viewmyreviews', function(req, res) {
     var username = req.query.username;
 

@@ -1,4 +1,6 @@
 App.factory('factory', function($http) {
+
+    // to store the username to display his/her reviews
     var selectedReviewUsername = null;
     // CREATING AN EMPTY USER
     var user = {
