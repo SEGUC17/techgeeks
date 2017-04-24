@@ -9,6 +9,9 @@ var homepageController = function($scope, $location, factory, $http) {
     $scope.viewallreviews = function() {
         $location.path('/reviewsofagym');
     }
+    $scope.viewallreviews = function() {
+        $location.path('/allgyms');
+    }
 }
 
 homepageController.$inject = ['$scope', '$location', 'factory', '$http'];

@@ -1,18 +1,16 @@
 var express = require("express");
 var router = express.Router();
-//REQUIRE GYM MODEL
-var Gyms = require("../models/gymmodel")
+var client = require("../models/clientmodel");
 
-router.post('/addgyms', function(req, res) {
-        Gyms.create({
-            Name: req.body.name,
-            Location: req.body.location,
-            Email: req.body.email,
-            Telephone: req.body.telephone,
-            Openinghours: req.body.hours,
-            Price: req.body.price,
-
-        }, function(err, gyms) {
+router.post('/register', function(req, res) {
+        client.create({
+            username: req.body.username,
+            Email: req.body.Email,
+            password: req.body.password,
+            gender: req.body.gender,
+            age: req.body.age,
+            Governance: req.body.Governance
+        }, function(err, client) {
             if (err) {
                 return res.status(500).json({
                     error: 'Interal server error',
@@ -21,9 +19,10 @@ router.post('/addgyms', function(req, res) {
             } else {
                 return res.json({
                     error: null,
-                    data: gyms
+                    data: client
                 });
             }
         });
     }),
+
     module.exports = router;

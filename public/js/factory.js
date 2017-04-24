@@ -73,7 +73,6 @@ App.factory('factory', function($http) {
         review: function() {
             var body = {
                 username: user.username,
-                //  gymName: Gym.Name,
             }
         }
     }

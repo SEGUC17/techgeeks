@@ -1,0 +1,23 @@
+<div>
+    <h1>All gyms</h1>
+
+    <table style="width:100%">
+        <!--TABLE HEADER-->
+        <tr>
+            <th>Gym Name</th>
+
+        </tr>
+        <!--TABLE HEADER-->
+        <!--TABLE CONTENT-->
+        <tr ng-repeat="gym in allgyms">
+            <td>{{gym.Name}}</td>
+
+        </tr>
+        <!--TABLE CONTENT-->
+    </table>
+    <div <a href="/reserve"> <button type="button"> Reserve </button></a>
+        <a href="/search"> <button type="button"> Search </button></a>
+        <a href="/compare"> <button type="button"> Compare </button></a>
+
+    </div>
+</div>
