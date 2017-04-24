@@ -5,7 +5,7 @@ var registerController = function($scope, $location, factory, $http) {
     $scope.password = '';
     $scope.gender = '';
     $scope.age = '';
-    $scope.governance = '';
+    $scope.Governance = '';
 
     $scope.register = function() {
         var body = {
@@ -14,7 +14,7 @@ var registerController = function($scope, $location, factory, $http) {
             password: $scope.password,
             gender: $scope.gender,
             age: $scope.age,
-            Governance: $scope.governance,
+            Governance: $scope.Governance,
         };
 
         $http.post('http://localhost:3000/register', body)

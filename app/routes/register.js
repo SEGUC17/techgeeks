@@ -9,7 +9,7 @@ router.post('/register', function(req, res) {
             password: req.body.password,
             gender: req.body.gender,
             age: req.body.age,
-            Governance: req.body.governance
+            Governance: req.body.Governance
         }, function(err, client) {
             if (err) {
                 return res.status(500).json({
