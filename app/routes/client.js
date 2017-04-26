@@ -22,7 +22,7 @@ router.post('/login', function(req, res) {
             });
         } else {
             return res.status(404).json({
-                error: 'User already exist',
+                error: 'No user found',
                 data: null
             });
         }
