@@ -16,6 +16,11 @@ router.get('/allgyms', (function(req, res) {
                 error: null,
                 data: gyms
             });
+        } else {
+            return res.status(500).json({
+                error: 'This gym doesnt exist',
+                data: null
+            });
         }
     });
 }));

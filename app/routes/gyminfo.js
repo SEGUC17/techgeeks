@@ -11,10 +11,15 @@ router.get('/gyminfo', function(req, res) {
                 error: 'Interal server error',
                 data: null
             });
-        } else {
+        } else if (gyms) {
             return res.json({
                 error: null,
                 data: gyms
+            });
+        } else {
+            return res.status(404).json({
+                error: 'This gym doesnt exist',
+                data: null
             });
         };
     });

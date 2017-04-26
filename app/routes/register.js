@@ -17,10 +17,15 @@ router.post('/register', function(req, res) {
                     error: 'Interal server error',
                     data: null
                 });
-            } else {
+            } else if (client) {
                 return res.json({
                     error: null,
                     data: client
+                });
+            } else {
+                return res.status(404).json({
+                    error: 'User already exists',
+                    data: null
                 });
             }
         });

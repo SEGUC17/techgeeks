@@ -2,37 +2,36 @@ var express = require("express");
 var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
-var clientSchema = new Schema ({
-    username : {
+var clientSchema = new Schema({
+    username: {
         type: String,
-        unique : true
+        unique: true
     },
     Email: {
-         type: String,
+        type: String,
         unique: true
     },
     password: {
-         type: String,
-        unique: true
+        type: String,
     },
     gender: {
         type: String,
     },
-     age: {
+    age: {
         type: Number,
     },
 
-     Governance: {
+    Governance: {
         type: String,
     },
 
-     reviews: {
+    reviews: {
         type: String,
     },
     rating: {
         type: String,
     },
-      activities: {
+    activities: {
         type: String,
     },
 })
