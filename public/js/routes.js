@@ -48,8 +48,8 @@ App.config(function($routeProvider) {
             templateUrl: '../views/users/viewmyreviews.html',
             controller: 'viewmyreviewsController',
         })
-        .when('/addgym', {
-            templateUrl: '../views/users/addgym.html',
+        .when('/addgyms', {
+            templateUrl: '../views/users/addgyms.html',
             controller: 'addgymsController',
         })
         .when('/viewgyms', {

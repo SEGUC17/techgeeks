@@ -1,4 +1,6 @@
 <!--FRONTEND OF WRITE REVIEWS!-->
+<form ng-submit="writereview()">
+<center>
 <div>
     <div class="page-header">
         <h1> Write Review </h1>
@@ -6,23 +8,34 @@
     <div>
         <div>
             <label>Name:</label>
-            <input type="text" ng-model="name" placeholder="Please enter your name">
+            <input class="form-control"type="text" ng-model="name" placeholder="Please enter your name" required>
         </div>
         <div>
             <label>Gym:</label>
-            <input type="text" ng-model="gymName" placeholder="Please enter your gym">
+            <input class="form-control"type="text" ng-model="gymName" placeholder="Please enter your gym">
         </div>
         <div>
             <label>Write Review:</label>
-            <input type="text" ng-model="review" placeholder="Please enter your review">
+            <input class="form-control"type="text" ng-model="review" placeholder="Please enter your review">
         </div>
         <div>
             <label>Rating:</label>
-            <input type="text" ng-model="rating" placeholder="Please enter your rate">
+            <input class="form-control" type="text" ng-model="rating" placeholder="Please enter your rate">
         </div>
 
         <div>
-            <button class="btn btn-primary" ng-click="writereview()"> Submit</button>
+            <button  type="submit"class="btn btn-primary"> Submit</button>
         </div>
     </div>
 </div>
+</center>
+</form>
+<style>
+*{
+  color: white;
+}
+.form-control{
+  width: 50%;
+}
+
+</style>

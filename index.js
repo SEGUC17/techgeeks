@@ -22,7 +22,7 @@ var reviews = require("./app/models/reviewmodel");
 // ROUTES
 app.use(require("./app/routes/homepage.js"));
 app.use(require("./app/routes/compare.js"));
-app.use(require("./app/routes/addgym.js"));
+app.use(require("./app/routes/addgyms.js"));
 app.use(require("./app/routes/uploadPhoto.js"));
 app.use(require("./app/routes/register.js"));
 app.use(require("./app/routes/client.js"));

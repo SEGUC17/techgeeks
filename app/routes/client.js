@@ -11,7 +11,7 @@ router.post('/login', function(req, res) {
     }, function(err, user) {
         if (err) {
             return res.status(500).json({
-                error: 'Internal server error',
+                error: 'Interal server error',
                 data: null
             });
         }
@@ -22,7 +22,7 @@ router.post('/login', function(req, res) {
             });
         } else {
             return res.status(404).json({
-                error: 'No user found',
+                error: 'User not found',
                 data: null
             });
         }
