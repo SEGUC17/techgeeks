@@ -14,7 +14,7 @@ router.post('/compare', function(req, res) {
     }, function(err, gyms) {
         if (err) {
             return res.status(500).json({
-                error: 'Interal server error',
+                error: 'Internal server error',
                 data: null
             });
         }

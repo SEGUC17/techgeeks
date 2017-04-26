@@ -13,7 +13,7 @@ router.post('/uploadPhoto', function(req, res) {
         }, function(err, photos) {
             if (err) {
                 return res.status(500).json({
-                    error: 'Interal server error',
+                    error: 'Internal server error',
                     data: null
                 });
             } else {

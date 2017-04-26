@@ -19,7 +19,7 @@ var addgymsController = function($scope, $location, factory, $http) {
         };
 
         //CALLING THE aDD GYMS FUNCTION FROM THE BACKEND
-        $http.post('http://localhost:3000/addgyms', body)
+        $http.post('http://localhost:3000/addgym', body)
             .then(function(data) {
                 alert('gym created!');
             })

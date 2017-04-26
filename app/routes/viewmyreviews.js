@@ -11,7 +11,7 @@ router.get('/viewmyreviews', function(req, res) {
     Reviews.find({ Username: username }, function(err, reviews) {
         if (err) {
             return res.status(500).json({
-                error: 'Interal server error',
+                error: 'Internal server error',
                 data: null
             });
         }
