@@ -8,13 +8,18 @@ router.get('/gyminfo', function(req, res) {
     Gyms.findOne({}, function(err, gyms) {
         if (err) {
             return res.status(500).json({
-                error: 'Interal server error',
+                error: 'Internal server error',
                 data: null
             });
-        } else {
+        } else if (gyms) {
             return res.json({
                 error: null,
                 data: gyms
+            });
+        } else {
+            return res.status(404).json({
+                error: 'This gym doesnt exist',
+                data: null
             });
         };
     });

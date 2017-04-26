@@ -14,13 +14,18 @@ router.post('/register', function(req, res) {
         }, function(err, client) {
             if (err) {
                 return res.status(500).json({
-                    error: 'Interal server error',
+                    error: 'Internal server error',
                     data: null
                 });
-            } else {
+            } else if (client) {
                 return res.json({
                     error: null,
                     data: client
+                });
+            } else {
+                return res.status(404).json({
+                    error: 'User already exists',
+                    data: null
                 });
             }
         });

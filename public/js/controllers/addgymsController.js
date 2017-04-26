@@ -1,29 +1,31 @@
 var addgymsController = function($scope, $location, factory, $http) {
     // READING TEXTBOXES ENTERED FROM FRONTEND
     console.log("Controller is here")
-    $scope.name = '';
-    $scope.location = '';
-    $scope.email = '';
-    $scope.telephone = '';
-    $scope.hours = '';
-    $scope.price = '';
+    $scope.Name = '';
+    $scope.Location = '';
+    $scope.Email = '';
+    $scope.Telephone = '';
+    $scope.Openinghours = '';
+    $scope.Price = '';
 
     $scope.addgyms = function() {
         var body = {
-            Name: $scope.name,
-            Location: $scope.location,
-            EMail: $scope.email,
-            Telephone: $scope.telephone,
-            Openinghours: $scope.hours,
-            Price: $scope.price,
+            Name: $scope.Name,
+            Location: $scope.Location,
+            EMail: $scope.Email,
+            Telephone: $scope.Telephone,
+            Openinghours: $scope.Openinghours,
+            Price: $scope.Price,
         };
 
         //CALLING THE aDD GYMS FUNCTION FROM THE BACKEND
-        $http.post('http://localhost:3000/addgyms', body)
+        $http.post('http://localhost:3000/addgym', body)
             .then(function(data) {
+                console.log(data.data.data);
                 alert('gym created!');
             })
             .catch(function(error) {
+                console.log(error.data.error);
                 alert(error.data.error);
             });
     }
