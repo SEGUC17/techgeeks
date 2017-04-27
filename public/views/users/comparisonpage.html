@@ -1,59 +1,178 @@
-<div class="page-header">
-    <h1>Compare Gyms</h1>
-</div>
+
+<center>
+    <div>
+    
+         <img src="https://cdn0.iconfinder.com/data/icons/hands-4/57/like_unlike-512.png" width="100" height="100" >
+<br>
 <style>
     table,
-    th,
-    td {
-        border: 1px solid black;
+    th
+    {
+        border: 10px solid black;
+        color: #F8C928;
+        border-radius:3%;
+
     }
+    td{
+        color:wheat;
+    }
+    label{
+        font-size:34;
+        color:black;
+    }
+    h1{
+         font-size:50;
+    }
+    .button1 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #F8C928;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  padding: 15px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 25px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    
+    .button2 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #F8C928;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  padding: 15px;
+  width: 150px;
+  transition: all 1.00s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 1.00s;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-right: 25px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    .button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 </style>
-<div class="well">
-    <table style="width:100%">
-        <tr>
-            <label>Gym 1:</label>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Email</th>
-            <th>Telephone</th>
-            <th>Opening Hours</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            <td> {{gym1.Name}}</td>
-            <td> {{gym1.Location}}</td>
-            <td> {{gym1.Email}}</td>
-            <td> {{gym1.Telephone}}</td>
-            <td> {{gym1.Openinghours}}</td>
-            <td> {{gym1.Price}}</td>
-        </tr>
+
+        <label>Gym 1:</label>
+        <table  cellspacing="10" width="700"  style="background-color:black">
         <div>
-            <button class="btn btn-primary" ng-click="reserve(gym1.Name)">Reserve</button>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Email</th> 
+                <th>Telephone</th>
+                <th>Opening Hours</th> 
+                <th>Price </th>
+                </tr>
+                <tr>
+                <td>{{gym1.Name}}</td>
+                <td> {{gym1.Location}}</td>
+                <td>{{gym1.Email}}</td>
+                <td> {{gym1.Telephone}}</td>
+                <td>{{gym1.Openinghours}}</td>
+                <td>{{gym1.Price}}</td>
+                </tr>
+                </table>
+            </div>
+            <div>
+                <br>
+                <br>
+
+               <button2 class="button2" ng-click="reserve(gym1.Name)" style="vertical-align:middle"><span>Reserve </span></button2>
+           
+            </div>
         </div>
-    </table>
-</div>
-<div class="well">
-    <table style="width:100%">
-        <tr>
-            <label>Gym 2:</label>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Email</th>
-            <th>Telephone</th>
-            <th>Opening Hours</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            <td> {{gym2.Name}}</td>
-            <td> {{gym2.Location}}</td>
-            <td> {{gym2.Email}}</td>
-            <td> {{gym2.Telephone}}</td>
-            <td> {{gym2.Openinghours}}</td>
-            <td> {{gym2.Price}}</td>
-        </tr>
+       <br>
+       <br>
+
+         <label>Gym 2:</label>
+        <table cellspacing="10" width="700" style="background-color:black" 
         <div>
-            <button class="btn btn-primary" ng-click="reserve(gym2.Name)">Reserve</button>
+              <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Email</th> 
+                <th>Telephone</th>
+                <th>Opening Hours</th> 
+                <th>Price </th>
+                </tr>
+                <tr>
+                <td>{{gym2.Name}}</td>
+                <td> {{gym2.Location}}</td>
+                <td>{{gym2.Email}}</td>
+                <td> {{gym2.Telephone}}</td>
+                <td>{{gym2.Openinghours}}</td>
+                <td>{{gym2.Price}}</td>
+                </tr>
+                </table>
+        
+            </div>
+            <div>
+<br>
+<br>
+               <button1 class="button1" ng-click="reserve(gym2.Name)"style="vertical-align:middle"><span>Reserve </span></button1>
+         
+            
+            </div>
         </div>
-    </table>
+    </div>
 </div>
-</div>
+
+
+
+

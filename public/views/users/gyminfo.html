@@ -1,34 +1,38 @@
 <div>
+    <center>
     <div class="page-header">
         <h1>Gym's information</h1>
     </div>
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
+<table  cellspacing="10" width="800"  style="background-color:black">
+    <div>
+        <div>
+            <div>
+                
+<!--viewing information about a certain gym!-->
+
+                <h4>Name: {{Gym.Name}}</h4>
+                <h4>Location: {{Gym.Location}}</h4>
+                <h4>Email: {{Gym.Email}}</h4>
+                <h4>Telephone: {{Gym.Telephone}}</h4>
+                <h4>Opening Hours: {{Gym.Openinghours}}</h4>
+                <h4>Price: {{Gym.Price}}</h4>
+            </div>
+
+        </div>
+        <style>
+  table,
+    th
+    {
+        border: 10px solid black;
+        color: #F8C928;
+        border-radius:3%;
+
+    }
+    td{
+        color:wheat;
+    }
     </style>
-    <!--viewing information about a certain gym!-->
-    <div class="well">
-        <table style="width:100%">
-            <tr>
-                <label>Gym 2:</label>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Email</th>
-                <th>Telephone</th>
-                <th>Opening Hours</th>
-                <th>Price</th>
-            </tr>
-            <tr>
-                <td> {{Gym.Name}}</td>
-                <td> {{Gym.Location}}</td>
-                <td> {{Gym.Email}}</td>
-                <td> {{Gym.Telephone}}</td>
-                <td> {{Gym.Openinghours}}</td>
-                <td> {{Gym.Price}}</td>
-            </tr>
-        </table>
+        <br />
+
     </div>
 </div>
