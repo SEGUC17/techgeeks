@@ -1,18 +1,71 @@
-<style>
-    table,
-    th,
-    td {
-        border: 1px solid black;
-    }
-</style>
 
-<div class="well">
+<style>
+   table,
+    th
+    {
+        border: 10px solid black;
+        color: #F8C928;
+        border-radius:3%;
+
+    }
+    td{
+        color:wheat;
+    }
+    .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #F8C928;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 150px;
+  transition: all 1.00s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 1.00s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.form-control{
+  width: 50%;
+}
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+</style>
+<center>
+<div>
     <h1>Reviews</h1>
     <h4>Username: {{selectedUsername}}</h4>
     <br />
     <div>
         <!--TABLE-->
-        <table style="width:100%">
+        <table cellspacing="10" width="700"  style="background-color:black">
             <!--TABLE HEADER-->
             <tr>
                 <th>Gym Name</th>
@@ -30,7 +83,8 @@
         </table>
         <!--TABLE-->
         <div>
-            <a href="#/compare">Compare</a>
-        </div>
+<br>
+            <a href="#/compare">   <button  type="submit"class="button" style="vertical-align:middle"><span> <p><b>Compare</b></p></span></span></button> </a>
+        </div> 
     </div>
 </div>
