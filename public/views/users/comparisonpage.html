@@ -1,38 +1,59 @@
-<div>
-    <div class="page-header">
-        <h1>Compare Gyms</h1>
-    </div>
-
-    <div>
+<div class="page-header">
+    <h1>Compare Gyms</h1>
+</div>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+<div class="well">
+    <table style="width:100%">
+        <tr>
+            <label>Gym 1:</label>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th>Opening Hours</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td> {{gym1.Name}}</td>
+            <td> {{gym1.Location}}</td>
+            <td> {{gym1.Email}}</td>
+            <td> {{gym1.Telephone}}</td>
+            <td> {{gym1.Openinghours}}</td>
+            <td> {{gym1.Price}}</td>
+        </tr>
         <div>
-            <div>
-                <label>Gym 1:</label>
-                <h4>Name: {{gym1.Name}}</h4>
-                <h4>Location: {{gym1.Location}}</h4>
-                <h4>Email: {{gym1.Email}}</h4>
-                <h4>Telephone: {{gym1.Telephone}}</h4>
-                <h4>Opening Hours: {{gym1.Openinghours}}</h4>
-                <h4>Price: {{gym1.Price}}</h4>
-            </div>
-            <div>
-                <button class="btn btn-primary" ng-click="reserve(gym1.Name)">Reserve</button>
-            </div>
+            <button class="btn btn-primary" ng-click="reserve(gym1.Name)">Reserve</button>
         </div>
-        <br />
+    </table>
+</div>
+<div class="well">
+    <table style="width:100%">
+        <tr>
+            <label>Gym 2:</label>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th>Opening Hours</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td> {{gym2.Name}}</td>
+            <td> {{gym2.Location}}</td>
+            <td> {{gym2.Email}}</td>
+            <td> {{gym2.Telephone}}</td>
+            <td> {{gym2.Openinghours}}</td>
+            <td> {{gym2.Price}}</td>
+        </tr>
         <div>
-            <div>
-                <label>Gym 2:</label>
-                <h4>Name: {{gym2.Name}}</h4>
-                <h4>Location: {{gym2.Location}}</h4>
-                <h4>Email: {{gym2.Email}}</h4>
-                <h4>Telephone: {{gym2.Telephone}}</h4>
-                <h4>Opening Hours: {{gym2.Openinghours}}</h4>
-                <h4>Price: {{gym2.Price}}</h4>
-            </div>
-            <div>
-
-                <button class="btn btn-primary" ng-click="reserve(gym2.Name)">Reserve</button>
-            </div>
+            <button class="btn btn-primary" ng-click="reserve(gym2.Name)">Reserve</button>
         </div>
-    </div>
+    </table>
+</div>
 </div>
