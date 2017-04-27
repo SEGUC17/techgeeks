@@ -1,31 +1,30 @@
 <html>
 
 <style>
-.form-control{
-  width: 50%;
-}
-*{
-  color: white;
-}
+    .form-control {
+        width: 50%;
+    }
+    
+    * {
+        color: white;
+    }
 </style>
-<body>
-  <center>
-    <form ng-submit="search()">
 
-<div>
-  <br>
-  <br>
-    <label>Name:</label>
-    <input class="form-control" type="text" ng-model="gymname" placeholder="please enter a name"required="">
-    <br> <label>Price:</label>
-    <input class="form-control" type="text" ng-model="gymprice" placeholder="please enter a price"><br>
-    <br> <label>Address:</label>
-    <input class="form-control" type="text" ng-model="gymlocation" placeholder="please enter a location"> <br>
-    <br>
-    <button type="submit" class="btn btn-primary"> Search</button>
-</div>
-</form>
-</center>
+<body>
+    <center>
+        <div>
+            <br>
+            <br>
+            <label>Name:</label>
+            <input class="form-control" type="text" ng-model="gymname" placeholder="please enter a name">
+            <br> <label>Price:</label>
+            <input class="form-control" type="text" ng-model="gymprice" placeholder="please enter a price"><br>
+            <br> <label>Address:</label>
+            <input class="form-control" type="text" ng-model="gymlocation" placeholder="please enter a location"> <br>
+            <br>
+            <button type="submit" ng-click="search()" class="btn btn-primary"> Search</button>
+        </div>
+    </center>
 
 
 </body>

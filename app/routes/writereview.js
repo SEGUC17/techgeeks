@@ -12,7 +12,7 @@ router.post('/writereview', (function(req, res) {
     Gyms.findOne({ Name: req.body.gymName }, function(err, gym) {
         if (err) {
             res.status(500).json({
-                error: 'Interal server error',
+                error: 'Internal server error',
                 data: null
             });
 

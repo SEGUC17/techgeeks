@@ -8,7 +8,7 @@ router.get('/allgyms', (function(req, res) {
     Gyms.find({}, function(err, gyms) {
         if (err) {
             return res.status(500).json({
-                error: 'Interal server error',
+                error: 'Internal server error',
                 data: null
             });
         } else if (gyms) {
