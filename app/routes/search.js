@@ -6,7 +6,7 @@ router.post('/search', function(req, res) {
     Gyms.findOne({ $and: [{ $or: [{ Name: req.body.gymname }, { Price: req.body.gymprice }, { Location: req.body.gymlocation }] }] }, function(err, gyms) {
         if (err) {
             return res.status(500).json({
-                error: 'Internal server error',
+                error: 'Interal server error',
                 data: null
             });
         } else if (gyms) {

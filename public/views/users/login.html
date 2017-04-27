@@ -1,14 +1,39 @@
+
+<form ng-submit="login()">
+
+<center>
 <div>
     <div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
         <label>Username</label>
-        <input type="text" ng-model="username" placeholder="john.doe" required>
+        <input class="form-control"
+ type="text" ng-model="username" placeholder="john.doe" required>
     </div>
     <div>
+      <br>
         <label>Password</label>
-        <input type="password" ng-model="password" placeholder="12345" required>
+        <input class="form-control"
+ type="password" ng-model="password" placeholder="12345" required>
     </div>
     <div>
         <!--CALLING FUNCTION FROM CONTROLLER!-->
-        <button ng-click="login()">LOGIN</button>
+        <br>
+        <button class="btn btn-primary"type="submit">LOGIN</button>
     </div>
 </div>
+</center>
+</form>
+<style>
+*{
+  color: white;
+}
+.form-control{
+  width: 50%;
+}
+
+</style>

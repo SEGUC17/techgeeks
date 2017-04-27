@@ -19,6 +19,7 @@ var writereviewsController = function($scope, $location, factory, $http) {
             //POSTING WRITING REVIEWS IN FRONT END AND SAVING IT IN THE DATABASE
             $http.post('http://localhost:3000/writereview', body)
                 .then(function(data) {
+                    console.log(data.data.data);
                     alert('Reviews done!');
                 })
                 .catch(function(error) {
