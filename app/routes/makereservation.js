@@ -15,7 +15,7 @@ router.post('/reserve', (function(req, res) {
     }, function(err, reservation) {
         if (err) {
             return res.status(500).json({
-                error: 'Internal server error',
+                error: 'Interal server error',
                 data: null
             });
         } else if (reservation) {

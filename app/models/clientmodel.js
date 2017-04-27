@@ -13,6 +13,7 @@ var clientSchema = new Schema ({
     },
     password: {
          type: String,
+        unique: true
     },
     gender: {
         type: String,

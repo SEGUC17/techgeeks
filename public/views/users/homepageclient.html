@@ -24,26 +24,73 @@
     </div> -->
 
     <div >
-      <img src="http://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"   style="size:10%">
+      <img src="http://cdn.onlinewebfonts.com/svg/img_311846.svg" width="150" height="150"> 
       <div class="container">
+
         <h1>{{user.username}}</h1>
-        <p class="title">{{user.age}}</p>
-        <p>{{user.Email}}</p>
-        <p> {{user.gender}}</p>
-        <p> From: {{user.Governance}}</p>
+        <p style="font-size: 30" class="title">{{user.age}}</p>
+        <p style="font-size: 25"> {{user.Email}}</p>
+        <p style="font-size: 25" class="title">{{user.gender}}</p>
+        <p style="font-size: 25">From: {{user.Governance}}</p>
         <div style="margin: 24px 0;">
        </div>
       </div>
     </div>
-    <a href="#/writereviews"> <button class="btn btn-primary"type="button"> Write Review </button></a>
-    <a href="#/reviewsofagym"> <button class="btn btn-primary" ng-click="viewallreviews()">View Reviews</button>
-<a href="#/uploadPhoto"> <button  class="btn btn-primary"type="button"> Upload a photo </button></a>
+  <a href="#/writereviews"> <button  class="button" style="vertical-align:middle"><span> <p><b>Write Reviews</b></p></span></span></button></a>
+    <a href="#/reviewsofagym">  <button  ng-click="viewallreviews()"class="button" style="vertical-align:middle"><span> <p><b>View Reviews</b></p></span></span></button></a>
+ <a href="#/uploadPhoto"> <button class="button" style="vertical-align:middle"><span> <p><b>Upload a Photo</b></p></span></span></button></a>
 </div>
   </center>
 </body>
     <style>
+    .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #F8C928;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 150px;
+  transition: all 1.00s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 1.00s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.form-control{
+  width: 50%;
+}
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
     *{
-      color: white;
+      color: black;
     }
 
     .card {
@@ -65,7 +112,7 @@
     }
 
     .title {
-      color: grey;
+      color: black;
       font-size: 18px;
     }
 
@@ -78,7 +125,7 @@
       background-color: #000;
       text-align: center;
       cursor: pointer;
-      width: 40%%;
+      width: 40%;
     }
 
     a {
@@ -90,7 +137,10 @@
     .button1:hover, a:hover {
       opacity: 0.7;
     }
-
+    h1{
+      font-size: 40;
+    }
+  
 
     </style>
 </html>

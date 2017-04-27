@@ -1,6 +1,7 @@
 var viewgymsController = function($scope, $location, factory, $http) {
     console.log("testing viewgyms controller")
 
+
     $http.get('http://localhost:3000/allgyms', {})
         .then(function(response) {
             console.log(response.data.data)

@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var Gyms = require("../models/gymmodel");
 //ADDING GYMS INTO DATABASE
-router.post('/addgyms', function(req, res) {
+router.post('/addgym', function(req, res) {
         Gyms.create({
             Name: req.body.name,
             Location: req.body.location,
@@ -13,10 +13,10 @@ router.post('/addgyms', function(req, res) {
         }, function(err, gyms) {
             if (err) {
                 return res.status(500).json({
-                    error: 'Interal server error',
-                    data: null
+                    error: 'Internal server error',
+                    data: gyms
                 });
-            } else {
+            } else if (gyms) {
                 return res.json({
                     error: null,
                     data: gyms

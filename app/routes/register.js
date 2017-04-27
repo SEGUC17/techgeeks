@@ -14,7 +14,7 @@ router.post('/register', function(req, res) {
         }, function(err, client) {
             if (err) {
                 return res.status(500).json({
-                    error: 'Internal server error',
+                    error: 'Interal server error',
                     data: null
                 });
             } else {

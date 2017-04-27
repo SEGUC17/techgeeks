@@ -2,7 +2,7 @@ var loginController = function($scope, $location, factory, $http) {
     // READING TEXTBOXES ENTERED FROM FRONTEND
     $scope.username = '';
     $scope.password = '';
-
+    //
     $scope.login = function() {
         var body = {
             username: $scope.username,
@@ -18,6 +18,7 @@ var loginController = function($scope, $location, factory, $http) {
                 alert(error.data.error);
             });
     }
+
 }
 
 loginController.$inject = ['$scope', '$location', 'factory', '$http'];
