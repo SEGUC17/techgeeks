@@ -1,25 +1,34 @@
 <!--FRONT END TO VIEW MY REVIEWS-->
 <div>
     <h1>Reviews of gyms</h1>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <div class="well">
+        <table style="width:100%">
+            <!--TABLE HEADER-->
+            <tr>
+                <th>Username </th>
+                <th>Gym Name</th>
+                <th>Review</th>
+                <th>Rating</th>
+            </tr>
+            <!--TABLE HEADER-->
+            <!--TABLE CONTENT-->
+            <tr ng-repeat="review in allreviews">
+                <td>{{review.Username}}</td>
+                <td>{{review.Name}}</td>
+                <td>{{review.Reviews}}</td>
+                <td>{{review.Ratings}}</td>
 
-    <table style="width:100%">
-        <!--TABLE HEADER-->
-        <tr>
-            <th>Gym Name</th>
-            <th>Review</th>
-            <th>Rating</th>
-        </tr>
-        <!--TABLE HEADER-->
-        <!--TABLE CONTENT-->
-        <tr ng-repeat="review in allreviews">
-            <td>{{review.Username}}</td>
-            <td>{{review.Name}}</td>
-            <td>{{review.Reviews}}</td>
-            <td>{{review.Ratings}}</td>
-
-        </tr>
-        <!--TABLE CONTENT-->
-    </table>
+            </tr>
+            <!--TABLE CONTENT-->
+        </table>
+    </div>
     <div>
         Username <br> <input type="text" ng-model="uname" placeholder="Name" required/>
         <button ng-click="viewReviews()">View Reviews</button>
