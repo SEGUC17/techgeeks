@@ -1,98 +1,87 @@
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <body>
 
-<div>
-  <center>
-    <div class="page-header">
-        <h1>Account info</h1>
-    </div>
-<!--
     <div>
-        <div>
-            <div>
-                <h4>Username: {{user.username}}</h4>
-                <h4>Email: {{user.Email}}</h4>
-                <h4>Gender: {{user.gender}}</h4>
-                <h4>Age: {{user.age}}</h4>
-                <h4>Governance: {{user.Governance}}</h4>
+        <center>
+            <div class="page-header">
+                <h1>Account info</h1>
             </div>
-            <a href="#/writereviews"> <button class="btn btn-primary"type="button"> Write Review </button></a>
-            <a href="#/reviewsofagym" button class="btn btn-primary" ng-click="viewallreviews()">View Reviews</button>
-        <a href="#/uploadPhoto"> <button  class="btn btn-primary"type="button"> Upload a photo </button></a>
-        </div>
-    </div> -->
-
-    <div >
-      <img src="http://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"   style="size:10%">
-      <div class="container">
-        <h1>{{user.username}}</h1>
-        <p class="title">{{user.age}}</p>
-        <p>{{user.Email}}</p>
-        <p> {{user.gender}}</p>
-        <p> From: {{user.Governance}}</p>
-        <div style="margin: 24px 0;">
-       </div>
-      </div>
+            <div>
+                <img src="http://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" style="size:10%">
+                <div class="container">
+                    Name:
+                    <h1>{{user.username}}</h1>
+                    Age:
+                    <p class="title">{{user.age}}</p>
+                    Email:
+                    <p>{{user.Email}}</p>
+                    Gender:
+                    <p> {{user.gender}}</p>
+                    From:
+                    <p> {{user.Governance}}</p>
+                    <div style="margin: 24px 0;">
+                    </div>
+                </div>
+            </div>
+            <a href="#/writereviews"> <button class="btn btn-primary" type="button"> Write Review </button></a>
+            <a href="#/reviewsofagym"> <button class="btn btn-primary" ng-click="viewallreviews()">View Reviews</button>
+                <a href="#/uploadPhoto"> <button class="btn btn-primary" type="button"> Upload a photo </button></a>
     </div>
-    <a href="#/writereviews"> <button class="btn btn-primary"type="button"> Write Review </button></a>
-    <a href="#/reviewsofagym"> <button class="btn btn-primary" ng-click="viewallreviews()">View Reviews</button>
-<a href="#/uploadPhoto"> <button  class="btn btn-primary"type="button"> Upload a photo </button></a>
-</div>
-  </center>
+    </center>
 </body>
-    <style>
-    *{
-      color: white;
+<style>
+    * {
+        color: white;
     }
-
+    
     .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      max-width: 30%;
-      margin: auto;
-      text-align: center;
-      font-family: arial;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 30%;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
     }
-
+    
     .container {
-      padding: 0 16px;
+        padding: 0 16px;
     }
-
+    
     .container::after {
-      content: "";
-      clear: both;
-      display: table;
+        content: "";
+        clear: both;
+        display: table;
     }
-
+    
     .title {
-      color: grey;
-      font-size: 18px;
+        color: grey;
+        font-size: 18px;
     }
-
+    
     .button1 {
-      border: none;
-      outline: 0;
-      display: inline-block;
-      padding: 8px;
-      color: white;
-      background-color: #000;
-      text-align: center;
-      cursor: pointer;
-      width: 40%%;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 40%;
     }
-
+    
     a {
-      text-decoration: none;
-
-      color: black;
+        text-decoration: none;
+        color: black;
     }
-
-    .button1:hover, a:hover {
-      opacity: 0.7;
+    
+    .button1:hover,
+    a:hover {
+        opacity: 0.7;
     }
+</style>
 
-
-    </style>
 </html>
 
 <!--
