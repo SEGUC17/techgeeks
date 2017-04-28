@@ -4,12 +4,12 @@ var Gyms = require("../models/gymmodel");
 //ADDING GYMS INTO DATABASE
 router.post('/addgyms', function(req, res) {
         Gyms.create({
-            Name: req.body.name,
-            Location: req.body.location,
-            Email: req.body.email,
-            Telephone: req.body.telephone,
-            Openinghours: req.body.hours,
-            Price: req.body.price
+            Name: req.body.Name,
+            Location: req.body.Location,
+            Email: req.body.Email,
+            Telephone: req.body.Telephone,
+            Openinghours: req.body.Openinghours,
+            Price: req.body.Price
         }, function(err, gyms) {
             if (err) {
                 return res.status(500).json({
