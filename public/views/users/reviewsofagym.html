@@ -1,104 +1,124 @@
 <!--FRONT END TO VIEW MY REVIEWS-->
 <div>
     <center>
-    <h1>Reviews of gyms</h1>
-    <br>
- <table  cellspacing="10" width="670"  style="background-color:black">
-        <div>
-            <tr>
-                <th>Gym Name</th>
-                <th>Review</th>
-                <th>Rating</th> 
-            
+        <h1><b><p>Reviews of gyms</b></p></h1>
+        <br>
+        <table cellspacing="10" width="670" style="background-color:black">
+            <div>
+                <tr>
+                    <th>Username</th>
+                    <th>Gym Name</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+
                 </tr>
                 <tr>
                     <tr ng-repeat="review in allreviews">
-                <td>{{review.Name}}</td>
-                <td> {{review.Reviews}}</td>
-                <td>{{review.Ratings}}</td>
-               
-                </tr>
-                </table>
-<style>
-    table,
-    th
-    {
-        border: 10px solid black;
-        color: #F8C928;
-        border-radius:3%;
+                        <td>{{review.Username}}</td>
+                        <td>{{review.Name}}</td>
+                        <td> {{review.Reviews}}</td>
+                        <td>{{review.Ratings}}</td>
 
+                    </tr>
+        </table>
+        <style>
+         * {
+        color: black;
     }
-    td{
-        color:wheat;
-    }
-    c{
-        font-size: 35;
-    }
-    .form-control{
-        width: 60%;
-    }
-    .button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #F8C928;
-  border: none;
-  color: black;
-  text-align: center;
-  font-size: 15px;
-  padding: 10px;
-  width: 150px;
-  transition: all 1.00s;
-  cursor: pointer;
-  margin: 5px;
+    h1 {
+    color: #F8C928;
+    text-shadow: -1px 0 #F8C928, 0 1px #F8C928, 1px 0 #F8C928, 0 -1px #F8C928;
+    font-size: 50;
 }
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 1.00s;
+            table,
+            th {
+                border: 10px solid black;
+                color: #F8C928;
+                border-radius: 3%;
+            }
+            
+            td {
+                color: wheat;
+            }
+            
+            c {
+                font-size: 25;
+            }
+            
+            .form-control {
+                width: 60%;
+            }
+             .form-control:hover {
+            box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+            .button {
+                display: inline-block;
+                border-radius: 4px;
+                background-color: #F8C928;
+                border: none;
+                color: black;
+                text-align: center;
+                font-size: 15px;
+                padding: 10px;
+                width: 200px;
+                transition: all 1.00s;
+                cursor: pointer;
+                margin: 5px;
+            }
+            
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 1.00s;
+            }
+            
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            
+            .button:hover span {
+                padding-right: 25px;
+            }
+            
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+            
+            .form-control {
+                width: 50%;
+            }
+            
+            .form-control:hover {
+                box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+            
+            .table:hover {
+                box-shadow: 0 15px 45px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+            
+            .button:hover {
+                box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+             table {
+    box-shadow: 5px 5px 5px #F8C928;
 }
+        </style>
+        <br>
+        <div>
+            <br>
+            <c> Username</c> <br> <input class=" form-control" type="text" ng-model="uname" placeholder="username" required/>
+            <br>
+            <button ng-click="viewReviews()" class="button" style="vertical-align:middle"><span> <p><b>View Reviews</b></p></span></span></button>
+            </br>
+            <a href="#/viewaccount"> <button type="submit" class="button" style="vertical-align:middle"><span> <p><b>Return to Homepage</b></p></span></span></button> </a>
 
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-.form-control{
-  width: 50%;
-}
-  .form-control:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-
-}
-
-  .table:hover{
-    box-shadow: 0 15px 45px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-
-}
-.button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-    </style>
-<br>
-    <div>
-       <c> Username</c> <br> <input class = " form-control"type="text" ng-model="uname" placeholder="username" required/>
-     <br>
-         <button   ng-click="viewReviews()" class="button" style="vertical-align:middle"><span> <p><b>View Reviews</b></p></span></span></button>
-
-    </div>
-</div>
+        </div>
+        </div>

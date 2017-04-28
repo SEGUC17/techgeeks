@@ -5,6 +5,14 @@
     <title>Upload Your Photo</title>
 
     <style>
+     * {
+        color: black;
+    }
+    h1 {
+    color: #F8C928;
+    text-shadow: -1px 0 #F8C928, 0 1px #F8C928, 1px 0 #F8C928, 0 -1px #F8C928;
+    font-size: 50;
+}
         .form-control {
             width: 40%;
         }
@@ -20,59 +28,64 @@
         legend {
             color: black;
         }
+        
         .button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #F8C928;
-  border: none;
-  color: black;
-  text-align: center;
-  font-size: 15px;
-  padding: 10px;
-  width: 150px;
-  transition: all 1.00s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 1.00s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-.form-control{
-  width: 50%;
-}
-.button:hover {
-    box-shadow: 0 15px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #F8C928;
+            border: none;
+            color: black;
+            text-align: center;
+            font-size: 15px;
+            padding: 10px;
+            width: 200px;
+            transition: all 1.00s;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 1.00s;
+        }
+        
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+        .button:hover span {
+            padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        
+        .form-control {
+            width: 50%;
+        }
+         .form-control:hover {
+            box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .button:hover {
+            box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
     </style>
 </head>
 
 <body>
     <div>
         <center>
-            <h1>Upload Your Photo Here</h1>
+            <h1><b><p>Upload Your Photo Here</b></p></h1>
 
             <form ng-submit="uploadPhoto()">
                 <legend>Choose a photo to upload</legend>
@@ -87,8 +100,10 @@
 
                 <img ng-src="file" id="pic" src="#" alt="your image" />
                 <br>
-                <button type="submit"class="button" style="vertical-align:middle"><span> <p><b>Upload</b></p></span></span></button>
+                <button type="submit" class="button" style="vertical-align:middle"><span> <p><b>Upload</b></p></span></span></button>
             </form>
+            <a href="#/viewaccount"> <button type="submit" class="button" style="vertical-align:middle"><span> <p><b>Return to Homepage</b></p></span></span></button> </a>
+
         </center>
     </div>
 

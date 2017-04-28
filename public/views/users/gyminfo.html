@@ -1,38 +1,97 @@
 <div>
     <center>
-    <div class="page-header">
-        <h1>Gym's information</h1>
-    </div>
-<table  cellspacing="10" width="800"  style="background-color:black">
-    <div>
-        <div>
-            <div>
-                
-<!--viewing information about a certain gym!-->
-
-                <h4>Name: {{Gym.Name}}</h4>
-                <h4>Location: {{Gym.Location}}</h4>
-                <h4>Email: {{Gym.Email}}</h4>
-                <h4>Telephone: {{Gym.Telephone}}</h4>
-                <h4>Opening Hours: {{Gym.Openinghours}}</h4>
-                <h4>Price: {{Gym.Price}}</h4>
-            </div>
-
+        <div class="page-header">
+            <h1><b><p>Gym's information</b></p></h1>
         </div>
-        <style>
-  table,
-    th
-    {
-        border: 10px solid black;
-        color: #F8C928;
-        border-radius:3%;
+        <table cellspacing="10" width="800" style="background-color:black">
+            <div>
+                <div>
+                    <div>
 
-    }
-    td{
-        color:wheat;
-    }
-    </style>
-        <br />
+                        <!--viewing information about a certain gym!-->
 
-    </div>
+                        <h4>Name: {{Gym.Name}}</h4>
+                        <h4>Location: {{Gym.Location}}</h4>
+                        <h4>Email: {{Gym.Email}}</h4>
+                        <h4>Telephone: {{Gym.Telephone}}</h4>
+                        <h4>Opening Hours: {{Gym.Openinghours}}</h4>
+                        <h4>Price: {{Gym.Price}}</h4>
+                    </div>
+
+                </div>
+                <style>
+                 * {
+        color: black;
+    }
+  h1 {
+    color: #F8C928;
+    text-shadow: -1px 0 #F8C928, 0 1px #F8C928, 1px 0 #F8C928, 0 -1px #F8C928;
+    font-size: 50;
+}
+                .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #F8C928;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 200px;
+  transition: all 1.00s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 1.00s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.form-control{
+  width: 50%;
+}
+ .form-control:hover {
+            box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+                    table,
+                    th {
+                        border: 10px solid black;
+                        color: #F8C928;
+                        border-radius: 3%;
+                    }
+                    
+                    td {
+                        color: wheat;
+                    }
+                </style>
+                <br />
+
+            </div>
+            </br>
+            <a href="#/viewaccount"> <button type="submit" class="button" style="vertical-align:middle"><span> <p><b>Return to Homepage</b></p></span></span></button> </a>
+
 </div>

@@ -13,8 +13,6 @@ var viewmyreviewsController = function($scope, $location, factory, $http) {
     }).catch(function(response) {
         alert(response.data.error);
     });
-
 }
-
 viewmyreviewsController.$inject = ['$scope', '$location', 'factory', '$http'];
 App.controller('viewmyreviewsController', viewmyreviewsController);
