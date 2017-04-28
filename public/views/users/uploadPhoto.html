@@ -5,6 +5,14 @@
     <title>Upload Your Photo</title>
 
     <style>
+     * {
+        color: black;
+    }
+    h1 {
+    color: #F8C928;
+    text-shadow: -1px 0 #F8C928, 0 1px #F8C928, 1px 0 #F8C928, 0 -1px #F8C928;
+    font-size: 50;
+}
         .form-control {
             width: 40%;
         }
@@ -30,7 +38,8 @@
             text-align: center;
             font-size: 15px;
             padding: 10px;
-            width: 150px;
+            width: 200px;
+
             transition: all 1.00s;
             cursor: pointer;
             margin: 5px;
@@ -64,6 +73,10 @@
         .form-control {
             width: 50%;
         }
+         .form-control:hover {
+            box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
         
         .button:hover {
             box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -74,7 +87,7 @@
 <body>
     <div>
         <center>
-            <h1>Upload Your Photo Here</h1>
+            <h1><b><p>Upload Your Photo Here</b></p></h1>
 
             <form ng-submit="uploadPhoto()">
                 <legend>Choose a photo to upload</legend>

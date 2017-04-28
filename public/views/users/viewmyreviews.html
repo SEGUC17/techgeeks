@@ -1,4 +1,16 @@
 <style>
+ table {
+    box-shadow: 5px 5px 5px #F8C928;
+}
+ * {
+        color: black;
+    }
+    h1 {
+    color: #F8C928;
+    text-shadow: -1px 0 #F8C928, 0 1px #F8C928, 1px 0 #F8C928, 0 -1px #F8C928;
+    font-size: 50;
+}
+
     table,
     th {
         border: 10px solid black;
@@ -19,7 +31,8 @@
         text-align: center;
         font-size: 15px;
         padding: 10px;
-        width: 150px;
+        width: 200px;
+
         transition: all 1.00s;
         cursor: pointer;
         margin: 5px;
@@ -53,6 +66,10 @@
     .form-control {
         width: 50%;
     }
+     .form-control:hover {
+            box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
     
     .button:hover {
         box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -60,7 +77,8 @@
 </style>
 <center>
     <div>
-        <h1>Reviews</h1>
+        <h1><b><p>Reviews</b></p></h1>
+
         <h4>Username: {{selectedUsername}}</h4>
         <br />
         <div>

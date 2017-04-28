@@ -3,7 +3,8 @@
     <center>
         <div>
             <div class="page-header">
-                <h1> Write Review </h1>
+                <h1><b><p> Write Review</b></p> </h1>
+
             </div>
             <div>
                 <div>
@@ -25,7 +26,8 @@
                 <br>
 
                 <div>
-                    <button type="submit" class="button" style="vertical-align:middle"><span> <p>Submit</p></span></button>
+                    <button type="submit" class="button" style="vertical-align:middle"><span> <p><b>Submit</b></p></span></button>
+
                 </div>
                 </br>
                 <a href="#/viewaccount"> <button type="submit" class="button" style="vertical-align:middle"><span> <p><b>Return to Homepage</b></p></span></span></button> </a>
@@ -42,7 +44,10 @@
     .form-control {
         width: 50%;
     }
-    
+     .form-control:hover {
+            box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
     .button {
         display: inline-block;
         border-radius: 4px;
@@ -52,7 +57,8 @@
         text-align: center;
         font-size: 15px;
         padding: 10px;
-        width: 150px;
+        width: 200px;
+
         transition: all 1.00s;
         cursor: pointer;
         margin: 5px;
@@ -105,4 +111,13 @@
         cursor: pointer;
         margin: 5px;
     }
+     * {
+        color: black;
+    }
+   h1 {
+    color: #F8C928;
+    text-shadow: -1px 0 #F8C928, 0 1px #F8C928, 1px 0 #F8C928, 0 -1px #F8C928;
+    font-size: 50;
+}
+
 </style>
