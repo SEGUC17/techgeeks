@@ -12,7 +12,7 @@ var addgymsController = function($scope, $location, factory, $http) {
         var body = {
             Name: $scope.Name,
             Location: $scope.Location,
-            EMail: $scope.Email,
+            Email: $scope.Email,
             Telephone: $scope.Telephone,
             Openinghours: $scope.Openinghours,
             Price: $scope.Price,
