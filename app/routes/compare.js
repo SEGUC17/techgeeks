@@ -34,4 +34,4 @@ router.post('/compare', function(req, res) {
 
 });
 
-module.exports = rout
+module.exports = router
