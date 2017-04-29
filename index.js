@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-mongoose.connect("mongodb://localhost:27017/techgeeks");
+mongoose.connect("mongodb://techgeeks:techgeeks@ds123351.mlab.com:23351/techgeeks");
 
 //REQUIRE MODELS
 var Gyms = require("./app/models/gymmodel");
@@ -39,6 +39,8 @@ app.use(require("./app/routes/viewmyreviews.js"));
 app.use(require("./app/routes/allgyms.js"));
 
 // SERVER LISTENING
-app.listen(3000, function() {
-    console.log("Server is Running on Port 3000");
-});
+// app.listen(3000, function() {
+//     console.log("Server is Running on Port 3000");
+// });
+
+app.listen(process.env.PORT);
