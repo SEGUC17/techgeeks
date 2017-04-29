@@ -18,8 +18,8 @@ router.post('/compare', function(req, res) {
                 data: null
             });
         }
-
-        if (gyms.length === 0) {
+            
+        if (gyms.length === 0  ||  gyms.length === 1)  {   
             return res.status(404).json({
                 error: 'Gyms not found',
                 data: null
@@ -29,9 +29,9 @@ router.post('/compare', function(req, res) {
                 error: null,
                 data: gyms
             });
-        }
+         }
     });
 
 });
 
-module.exports = router;
+module.exports = router
