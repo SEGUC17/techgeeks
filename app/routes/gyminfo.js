@@ -5,7 +5,7 @@ var Gyms = require("../models/gymmodel")
 
 router.get('/gyminfo', function(req, res) {
     //looping through gym's database
-    Gyms.findOne({}, function(err, gyms) {
+    Gyms.find({}, function(err, gyms) {
         if (err) {
             return res.status(500).json({
                 error: 'Internal server error',

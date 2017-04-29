@@ -3,7 +3,6 @@ var viewgymsController = function($scope, $location, factory, $http) {
 
     $http.get('http://localhost:3000/allgyms', {})
         .then(function(response) {
-            console.log(response.data.data)
             $scope.allgyms = response.data.data;
         }).catch(function(response) {
             alert(response.data.error);
