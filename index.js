@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-mongoose.connect("mongodb://localhost:27017/techgeeks");
+mongoose.connect("mongodb://techgeeks:techgeeks@ds123351.mlab.com:23351/techgeeks");
 
 //REQUIRE MODELS
 var Gyms = require("./app/models/gymmodel");
