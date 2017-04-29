@@ -42,5 +42,5 @@ app.use(require("./app/routes/allgyms.js"));
 // app.listen(3000, function() {
 //     console.log("Server is Running on Port 3000");
 // });
-var port = process.env,PORT;
-app.listen(port);
+
+app.listen(process.env.PORT);
