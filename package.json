@@ -4,7 +4,7 @@
     "description": "SE project",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon index.js",
+        "start": "node index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "engines": {
@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SEGUC17/techgeeks.git"
+        "url": "https://github.com/SEGUC17/techgeeks.git"
     },
     "author": "",
     "license": "ISC",
