@@ -1,8 +1,9 @@
+    var port = process.env.PORT
 var loginController = function($scope, $location, factory, $http) {
     // READING TEXTBOXES ENTERED FROM FRONTEND
     $scope.username = '';
     $scope.password = '';
-    var port = process.env.PORT
+
 
     $scope.login = function() {
         var body = {
