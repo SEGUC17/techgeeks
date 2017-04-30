@@ -1,4 +1,4 @@
-    var port = process.env.PORT
+    //var port = process.env.PORT
 var loginController = function($scope, $location, factory, $http) {
     // READING TEXTBOXES ENTERED FROM FRONTEND
     $scope.username = '';
@@ -11,10 +11,10 @@ var loginController = function($scope, $location, factory, $http) {
             password: $scope.password
         };
         //CALLING THE LOGIN FUNCTION FROM THE BACKEND
-        $http.post('http://localhost:'+port+'/login', body)
+        $http.post('http://localhost/login', body)
             .then(function(data) {
                 factory.setUser(data.data.data);
-                $location.path('/viewaccount');
+ //               $location.path('/viewaccount');
             })
             .catch(function(error) {
                 alert(error.data.error);
