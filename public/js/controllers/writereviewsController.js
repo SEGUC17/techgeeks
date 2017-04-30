@@ -17,7 +17,7 @@ var writereviewsController = function($scope, $location, factory, $http) {
                 rating: $scope.rating
             };
             //POSTING WRITING REVIEWS IN FRONT END AND SAVING IT IN THE DATABASE
-            $http.post('http://localhost:3000/writereview', body)
+            $http.post('/writereview', body)
                 .then(function(data) {
                     alert('Reviews done!');
                 })

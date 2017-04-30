@@ -6,7 +6,7 @@ var reviewsofagymController = function($scope, $location, factory, $http) {
             $location.path('/viewmyreviews');
         }
         //SEARCH IN THE DATABASE FOR CERTAIN GYM AND VIEW ITS
-    $http.get('http://localhost:3000/reviewsofagym', {})
+    $http.get('/reviewsofagym', {})
         .then(function(response) {
             $scope.allreviews = response.data.data;
         }).catch(function(response) {

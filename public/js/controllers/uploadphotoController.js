@@ -10,7 +10,7 @@ var uploadphotoController = function($scope, $location, $http) {
             file: $scope.file,
 
         };
-        $http.post('http://localhost:3000/uploadPhoto', body)
+        $http.post('/uploadPhoto', body)
             .then(function(data) {
                 alert('Photo uploaded!');
                 $location.path('/uploadPhoto');

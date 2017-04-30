@@ -9,7 +9,7 @@ var searchController = function($scope, $location, factory, $http) {
             gymprice: $scope.gymprice,
             gymlocation: $scope.gymlocation
         };
-        $http.post('http://localhost:3000/search', body)
+        $http.post('/search', body)
             .then(function(data) {
                 factory.setGym(data.data.data);
                 $location.path('/gyminfo');

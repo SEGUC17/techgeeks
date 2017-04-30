@@ -73,7 +73,7 @@ App.factory('factory', function($http) {
                 gymName: gymName,
             };
 
-            return $http.post('http://localhost:3000/reserve', body);
+            return $http.post('/reserve', body);
         },
         review: function() {
             var body = {
