@@ -39,11 +39,11 @@ app.use(require("./app/routes/viewmyreviews.js"));
 app.use(require("./app/routes/allgyms.js"));
 
 // SERVER LISTENING
-// app.listen(3000, function() {
-//     console.log("Server is Running on Port 3000");
-// });
- var port = process.env.PORT
+app.listen(3000, function() {
+    console.log("Server is Running on Port 3000");
+});
+// var port = process.env.PORT
 // app.listen(port);
 
-app.set('port', process.env.PORT);
-app.listen(app.get('port'));
+// app.set('port', process.env.PORT);
+// app.listen(app.get('port'));

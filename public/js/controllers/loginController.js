@@ -11,10 +11,10 @@ var loginController = function($scope, $location, factory, $http) {
             password: $scope.password
         };
         //CALLING THE LOGIN FUNCTION FROM THE BACKEND
-        $http.post('http://localhost/login', body)
+        $http.post('http://localhost:3000/login', body)
             .then(function(data) {
                 factory.setUser(data.data.data);
- //               $location.path('/viewaccount');
+                $location.path('/viewaccount');
             })
             .catch(function(error) {
                 alert(error.data.error);
