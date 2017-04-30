@@ -2,6 +2,7 @@ var loginController = function($scope, $location, factory, $http) {
     // READING TEXTBOXES ENTERED FROM FRONTEND
     $scope.username = '';
     $scope.password = '';
+    var port = process.env.PORT
 
     $scope.login = function() {
         var body = {
@@ -9,7 +10,7 @@ var loginController = function($scope, $location, factory, $http) {
             password: $scope.password
         };
         //CALLING THE LOGIN FUNCTION FROM THE BACKEND
-        $http.post('http://localhost:'+app.get('port')+'/login', body)
+        $http.post('http://localhost:'+port+'/login', body)
             .then(function(data) {
                 factory.setUser(data.data.data);
                 $location.path('/viewaccount');
